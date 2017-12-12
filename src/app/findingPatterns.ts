@@ -191,8 +191,7 @@ export class FindingPatterns {
     var outputString = '';
  
     if (outputLength === 1){
-      this.outputValue = '------------Results Summary----------'+
-      +'Original Count: ' +this.getFirstLineCounts() + 
+      this.outputValue = 'Original Count: ' +this.getFirstLineCounts() + 
       '\n'+ 'Reduced instruction Count:' +this.finalLines.length+ '\n'+
       'Number of sequences identified: '+ this.countSequences+'\n'+ 
       '\n'+
@@ -434,11 +433,11 @@ export class FindingPatterns {
       {
         if(this.finalLines[i+1].instructions.trim().startsWith("ret"))
         {
-          console.log("return of the function ");
+          console.log("return of the function");
           this.countSequences++;
           this.seqID_2++;
           let printSeq3 = "} - End of the function"
-          this.print2 += "_____________________________________"+"\n"+
+          this.print2 += "___________________________________"+"\n"+
           'Sequence ID: 2'+"\n"+ "Count: "+ this.countSequences+ '\n' +
            printSeq3+"\n"+ "In the lines: " +(i+1)+ ", " +(i+2)+ "\n"+ 
            this.finalLines[i].instructions+'\n'+this.finalLines[i+1].instructions+'\n';
