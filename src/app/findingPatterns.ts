@@ -434,11 +434,11 @@ export class FindingPatterns {
       {
         if(this.finalLines[i+1].instructions.trim().startsWith("ret"))
         {
-          console.log("return of the function");
+          console.log("return of the function ");
           this.countSequences++;
           this.seqID_2++;
           let printSeq3 = "} - End of the function"
-          this.print2 += "___________________________________"+"\n"+
+          this.print2 += "_____________________________________"+"\n"+
           'Sequence ID: 2'+"\n"+ "Count: "+ this.countSequences+ '\n' +
            printSeq3+"\n"+ "In the lines: " +(i+1)+ ", " +(i+2)+ "\n"+ 
            this.finalLines[i].instructions+'\n'+this.finalLines[i+1].instructions+'\n';
