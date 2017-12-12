@@ -1,0 +1,577 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+/* Styles go here */
+
+/* Layout styles */
+
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%; 
+}
+
+.content {
+	min-height: 100%;
+	position: relative;
+	overflow: auto;
+	z-index: 0; 
+}
+
+.background {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.top_block {
+	width: 100%;
+	display: block; 
+}
+
+.bottom_block {
+	position: absolute;
+	width: 100%;
+	display: block;
+	bottom: 0; 
+}
+
+.left_block {
+	display: block;
+	float: left; 
+}
+
+.right_block {
+	display: block;
+	float: right; 
+}
+
+.center_block {
+	display: block;
+	width: auto; 
+}
+
+.block_1 {
+	width: 100%;
+	height: 45px;
+	background-color: #9999ff;
+}
+
+.block_8 {
+	width: 100%;
+	height: 40px;
+	background-color: #993399;
+}
+
+.background.block_9 {
+	height: auto !important;
+	padding-bottom: 0;
+	left: 0;
+	width: 250px;
+	background-color: #993366;
+	margin-top: 85px;
+	margin-bottom: 30px; 
+}
+
+.block_9 {
+	height: auto;
+	width: 250px;
+	padding-bottom: 30px;
+}
+
+.background.block_5 {
+	height: auto !important;
+	padding-bottom: 0;
+	right: 0;
+	width: 150px;
+	background-color: #996699;
+	margin-top: 85px;
+	margin-bottom: 30px; 
+}
+
+.block_5 {
+	height: auto;
+	width: 150px;
+	padding-bottom: 30px;
+}
+
+.block_2 {
+	width: 100%;
+	height: 30px;
+	background-color: #999999;
+}
+
+
+
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+
+/* Layout */
+
+// div.container {
+//     width: 100%;
+//     border: 2px solid gray;
+// }
+
+header{
+    border-bottom: 1px solid #0747A6;
+    background: #0747A6;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+
+nav {
+    float: left;
+    max-width: 500px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration: none;
+}
+
+/** Instruction Table styles **/
+
+.instruction-article {
+    padding-top: 0px;
+    padding-left: 20px;
+    margin-left: 0;
+    text-align : left;
+    overflow: hidden;
+}
+.instruction-article h1 {
+    font-family: Courier New;
+    border: 5px solid #000;
+    padding: 10px;
+}
+
+.instruction-article h3 {
+    font-family: Courier New;
+    border: 5px solid #000;
+    padding: 10px;
+}
+.instruction-article .table {
+    border-spacing: 10px;
+    border-collapse: separate;
+}
+
+.instruction-article table thead tr th{
+    text-align: center;
+    font-size: 16px;
+}
+.instruction-article .first-select {
+    margin-bottom: 5px;
+    width: 200px;
+}
+.instruction-article .second-select {
+    margin-bottom: 5px;
+    width: 200px;
+}
+.instruction-article .right-arrow {
+    width: 32px; 
+    color:brown
+}
+.instruction-article .reg-text {
+    text-align: center;
+}
+.instruction-article .right-arrow .fa {
+    padding-left: 5px;
+}
+.instruction-article .right-name {
+    width: 52px;
+    padding: 5px;
+}
+.instruction-article .right-name2 {
+    width: 100px;
+    padding: 5px;
+}
+
+.instruction-article textarea {
+    font-size: 16px;
+    color:#003b4d;
+    font-weight: 600;
+    border: 5px solid rgb(18, 88, 129);
+}
+.instruction-article .logic-Heading1 {
+    color:#995c00;
+    margin-top: 0;
+}
+.instruction-article .arrow-highlight {
+    border:0;
+}
+
+.instruction-article .reg-name {
+    width: 150px;
+}
+.instruction-article .arrow-highlight {
+    width: 50px;
+    color:green;
+}
+.instruction-article .arrow-highlight .fa-3x {
+    font-size: 1.5em;
+}
+.instruction-article .arrow-highlight .fa {
+    padding-left: 10px;
+}
+.instruction-article .instruction-box {
+    padding: 10px;
+    border: 0;
+}
+.instruction-article .registers-row, .register-head {
+    background-color: #2eccb2;
+}
+.instruction-article .memory-row, .memory-head {
+    background-color: #3498db;
+}
+.instruction-article .input-row, .input-head {
+    background-color: #34495e;
+}
+.instruction-article .memory-row, .instruction-article .registers-row {
+    padding: 0;
+}
+.instruction-article .memory-row td, .instruction-article .registers-row td{
+    border: 0;
+    border-radius: 0;
+}
+.selected-register {
+    margin-top: 5px;
+}
+.selected-register input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.instruction-article .table {
+    border:0;
+    background-color: #2b2b2b;
+    color: #fff;
+}
+
+.instruction-article .table .memory-row .oddRow, .instruction-article .table .registers-row .oddRow {
+    background-color: #fff;
+    color: #000;
+}
+.instruction-article .table .memory-row .evenRow, .instruction-article .table .registers-row .evenRow {
+    background-color: #ecf0f1;
+    color: #000;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+.button {
+   background-color: #008CBA;
+   border: none;
+   color: white;
+   padding: 10px 25px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   margin: 2px 2px;
+   cursor: pointer;
+   
+}
+
+/* Top nav */
+
+body {margin:0;}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav .icon {
+  display: none;
+}
+/** Header Styles**/
+
+.assembly-wrapper .assembly-navbar li a {
+    color:#fff;
+}
+.assembly-wrapper .assembly-navbar li a:hover {
+    color:#23527c;
+}
+.assembly-wrapper .navbar-brand {
+    color:#fff;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .regone
+  {
+    float:left;
+    width:4%;
+  }
+  .regtwo
+  {
+    float:right;
+    width:45%;
+  }
+  
+}
+
+/**Instructions Page Styles **/
+.instructions-wrapper {
+    border: 5px solid #3b5998;
+    margin-left: 20px;
+}
+.instructions-wrapper .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.instructions-wrapper .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.instructions-wrapper .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+.modalBtn {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.modalBtn-patterns .modal-dialog {
+    margin:10px;
+}
+.instructions-wrapper .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+.instructions-wrapper .btn-secong-grp {
+    margin-top: 15px;
+}
+.instructions-wrapper .operations-block {
+    padding: 5px;
+    background-color: #d3cfcfd7;
+    margin-bottom: 10px;
+}
+.instructions-wrapper .operations-block h3 {
+    text-align: center;
+}
+.instructions-wrapper .btn-grp,.btn-secong-grp {
+    text-align: center;
+}
+
+/** Finding Patterns styles **/
+.finding-patternsWrapper .pattern-filetype {
+    margin-bottom: 20px;
+}
+.finding-patternsWrapper .run-btn {
+    margin-right: 10px;
+}
+.finding-patternsWrapper .step1-btn {
+    margin-bottom: 10px;
+}
+.finding-patternsWrapper .input-head{
+    background-color: #34495e;
+    color: #fff;
+}
+.finding-patternsWrapper .input-body{
+    background-color: #34495e;
+}
+.finding-patternsWrapper .output-body {
+    background-color: #2eccb2;
+}
+.finding-patternsWrapper .results-body {
+    background-color: #5990b4;
+}
+.finding-patternsWrapper .output-head{
+    background-color: #2eccb2;
+    color: #fff;
+}
+.finding-patternsWrapper .results-head{
+    background-color: #445f85;
+    color: #fff;
+    margin-left :10px;
+}
+.finding-patternsWrapper .pattern-filetype input {
+    margin-bottom: 20px;
+}
+.finding-patternsWrapper .pattern-filetype h3 {
+    margin-right: 20px;
+}
+.finding-patternsWrapper {
+    padding: 0 30px 0 30px;
+}
+
+.finding-patternsWrapper .results-area {
+    background-color: #000;
+    color: #fff;
+    font-family: Courier New, Courier, monospace;
+}
+
+.finding-patternsWrapper .p-select {
+    font-size: 18px;
+    margin-right: 20px;
+}
+.finding-patternsWrapper .table {
+    border: 0;
+}
+.finding-patternsWrapper .table {
+    border-spacing: 5px;
+    border-collapse: separate;
+}
+.finding-patternsWrapper .patterns-body td {
+    border: 0;
+}
+.finding-patternsWrapper .table th {
+    text-align: center;
+    border: 0;
+}
+.finding-patternsWrapper textarea {
+    resize: none;
+}
+.finding-patternsWrapper .instructions-column {
+    border: 1px solid #000 !important;
+}
+
+.debugger-wrapper .debug-btn,.debug-btn2{
+    margin: 10px 0 10px 0;
+}
+.debugger-wrapper .debug-select {
+    padding: 8px 25px;
+}
+
+
+/*Home Styles */
+.home-wrapper .navbar-style {
+    padding-left: 0;
+    list-style: none;
+    border-color: 1px solid #f5f5f5;
+}
+
+.home-wrapper .navbar-style li {
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    color: #333;
+}
+.home-wrapper .navbar-style .navbar-insidelink {
+    text-decoration: none;
+}
+.home-wrapper .navbar-style a:hover {
+    text-decoration: none;
+}
+.home-wrapper .home-list {
+    text-align: center;
+}
+.home-wrapper .home-list a {
+    color: #34495e;
+    font-weight: bold;
+}
+.home-wrapper .navbar-style li:hover {
+    background-color: skyblue;
+}
+.home-wrapper .tab-pane-head {
+    color:#337ab7;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.home-wrapper .tab-content .tab-pane {
+    padding-right: 30px;
+}
+.home-wrapper .tab-pane {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+.help-wrapper {
+    background: #f5f5f5;
+    padding: 20px;
+}
+
+.chart-container
+{
+    margin-left: 500px;
+    background: #1b1717;
+}

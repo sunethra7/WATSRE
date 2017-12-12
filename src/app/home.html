@@ -1,0 +1,209 @@
+<div class="home-wrapper container-fluid">
+    <!-- tabs left -->
+    <div class="tabbable row">
+        <div class="col-sm-3">
+            <ul class="navbar navbar-default navbar-style">
+                <a href="#a" data-toggle="tab">
+                    <li class="home-list">
+                        <a class="navbar-insidelink">About</a>
+                    </li>
+                </a>
+                <a href="#b" data-toggle="tab">
+                    <li class="home-list">
+                        <a class="navbar-insidelink">Instructions 64 bit module</a>
+                    </li>
+                </a>
+                <a href="#c" data-toggle="tab">
+                    <li class="home-list"> 
+                        <a class="navbar-insidelink">Instructions 32 bit module</a>
+                    </li>
+                </a>
+                <!-- <a href="#d" data-toggle="tab">
+                    <li class="home-list">
+                        <a class="navbar-insidelink">Debugger module</a>
+                    </li>
+                </a> -->
+                <a href="#e" data-toggle="tab">
+                    <li class="home-list">
+                        <a class="navbar-insidelink">Finding patterns module</a>
+                    </li>
+                </a>
+                <a href="#f" data-toggle="tab">
+                    <li class="home-list">
+                        <a class="navbar-insidelink">Help</a>
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <div class="tab-content col-sm-9">
+            <div class="tab-pane active" id="a">
+                <h3 class="tab-pane-head">About</h3>
+                <p> Reverse engineering is taking apart an object to see how it works in order to duplicate or enhance the object.
+                    The practice, taken from older industries, is now frequently used on computer hardware and software.
+                    Software reverse engineering involves reversing a program's machine code (the string of 0s and 1s that
+                    are sent to the logic processor) back into the source code that it was written in, using program language
+                    statements.</p>
+                    <p>Software reverse engineering is done to retrieve the source code of a program because the
+                    source code was lost, to study how the program performs certain operations, to improve the performance
+                    of a program, to fix a bug (correct an error in the program when the source code is not available), to
+                    identify malicious content in a program such as a virus or to adapt a program written for use with one
+                    microprocessor for use with another. </p>
+                    <p>Reverse engineering for the purpose of copying or duplicating programs
+                    may constitute a copyright violation. In some cases, the licensed use of software specifically prohibits
+                    reverse engineering. Someone doing reverse engineering on software may use several tools to disassemble
+                    a program.</p>
+                    <p>One tool is a hexadecimal dumper, which prints or displays the binary numbers of a program
+                    in hexadecimal format (which is easier to read than a binary format). By knowing the bit patterns that
+                    represent the processor instructions as well as the instruction lengths, the reverse engineer can identify
+                    certain portions of a program to see how they work. Another common tool is the disassembler. The disassembler
+                    reads the binary code and then displays each executable instruction in text form. A disassembler cannot
+                    tell the difference between an executable instruction and the data used by the program so a debugger
+                    is used, which allows the disassembler to avoid disassembling the data portions of a program. These tools
+                    might be used by a cracker to modify code and gain entry to a computer system or cause other harm.
+                </p>
+            </div>
+            <div class="tab-pane" id="b">
+                <h3 class="tab-pane-head">Instructions 64 bit module</h3>
+                <p>The x64 architecture is a backwards-compatible extension of x86. It provides a legacy 32-bit mode, which
+                    is identical to x86, and a new 64-bit mode.</p>
+
+                <p>The term "x64" includes both AMD 64 and Intel64. The instruction sets are close to identical.</p>
+                Registers
+                <p>x64 extends x86's 8 general-purpose registers to be 64-bit, and adds 8 new 64-bit registers. The 64-bit registers
+                    have names beginning with "r", so for example the 64-bit extension of eax is called rax. The new registers
+                    are named r8 through r15.</p>
+                <p>The lower 32 bits, 16 bits, and 8 bits of each register are directly addressable in operands. This includes
+                    registers, like esi, whose lower 8 bits were not previously addressable. The following table specifies
+                    the assembly-language names for the lower portions of 64-bit registers Operations that output to a 32-bit
+                    subregister are automatically zero-extended to the entire 64-bit register. </p>
+                <p>Operations that output to 8-bit or 16-bit subregisters are not zero-extended (this is compatible x86 behavior).
+                    The high 8 bits of ax, bx, cx, and dx are still addressable as ah, bh, ch, dh, but cannot be used with
+                    all types of operands. The instruction pointer, eip, and flags register have been extended to 64 bits
+                    (rip and rflags, respectively) as well. The x64 processor also provides several sets of floating-point
+                    registers: Eight 80-bit x87 registers. Eight 64-bit MMX registers. (These overlap with the x87 registers.)
+                </p>
+                <p>The original set of eight 128-bit SSE registers is increased to sixteen. Calling Conventions Unlike the x86,
+                    the C/C++ compiler only supports one calling convention on x64. This calling convention takes advantage
+                    of the increased number of registers available on x64: The first four integer or pointer parameters are
+                    passed in the rcx, rdx, r8, and r9registers.</p>
+                <p>The first four floating-point parameters are passed in the first four SSE registers, xmm0-xmm3. The caller
+                    reserves space on the stack for arguments passed in registers. The called function can use this space
+                    to spill the contents of registers to the stack.</p>
+                <p>Any additional arguments are passed on the stack. An integer or pointer return value is returned in the rax
+                    register, while a floating-point return value is returned in xmm0.</p>
+                <p>rax, rcx, rdx, r8-r11 are volatile. rbx, rbp, rdi, rsi, r12-r15 are nonvolatile. The calling convention for
+                    C++ is very similar: the this pointer is passed as an implicit first parameter. The next three parameters
+                    are passed in registers, while the rest are passed on the stack. Addressing Modes The addressing modes
+                    in 64-bit mode are similar to, but not identical to, x86. Instructions that refer to 64-bit registers
+                    are automatically performed with 64-bit precision. (For example mov rax, [rbx] moves 8 bytes beginning
+                    at rbx into rax.)</p>
+                <p>A special form of the mov instruction has been added for 64-bit immediate constants or constant addresses.
+                    For all other instructions, immediate constants or constant addresses are still 32 bits. x64 provides
+                    a new rip-relative addressing mode. Instructions that refer to a single constant address are encoded
+                    as offsets from rip. </p>
+                <p>For example, the mov rax, [addr]instruction moves 8 bytes beginning at addr + rip to rax. Instructions, such
+                    as jmp, call, push, and pop, that implicitly refer to the instruction pointer and the stack pointer treat
+                    them as 64 bits registers on x64.</p>
+
+
+            </div>
+            <div class="tab-pane" id="c">
+                <h3 class="tab-pane-head">Instructions 32 bit module</h3>
+                <p>
+                    This guide describes the basics of 32-bit x86 assembly language programming, covering a small but useful subset of the available
+                    instructions and assembler directives. There are several different assembly languages for generating
+                    x86 machine code. The one we will use in CS216 is the Microsoft Macro Assembler (MASM) assembler. MASM
+                    uses the standard Intel syntax for writing x86 assembly code.
+                </p>
+                <p>
+                    The full x86 instruction set is large and complex (Intel's x86 instruction set manuals comprise over 2900 pages), and we
+                    do not cover it all in this guide. For example, there is a 16-bit subset of the x86 instruction set.
+                    Using the 16-bit programming model can be quite complex. It has a segmented memory model, more restrictions
+                    on register usage, and so on. In this guide, we will limit our attention to more modern aspects of x86
+                    programming, and delve into the instruction set only in enough detail to get a basic feel for x86 programming.
+                </p>
+                <p>
+                    Modern (i.e 386 and beyond) x86 processors have eight 32-bit general purpose registers, as depicted in Figure 1. The register
+                    names are mostly historical. For example, EAX used to be called the accumulator since it was used by
+                    a number of arithmetic operations, and ECX was known as the counter since it was used to hold a loop
+                    index. Whereas most of the registers have lost their special purposes in the modern instruction set,
+                    by convention, two are reserved for special purposes — the stack pointer (ESP) and the base pointer (EBP).
+                </p>
+                <p>
+                    For the EAX, EBX, ECX, and EDX registers, subsections may be used. For example, the least significant 2 bytes of EAX can
+                    be treated as a 16-bit register called AX. The least significant byte of AX can be used as a single 8-bit
+                    register called AL, while the most significant byte of AX can be used as a single 8-bit register called
+                    AH. These names refer to the same physical register. When a two-byte quantity is placed into DX, the
+                    update affects the value of DH, DL, and EDX. These sub-registers are mainly hold-overs from older, 16-bit
+                    versions of the instruction set. However, they are sometimes convenient when dealing with data that are
+                    smaller than 32-bits (e.g. 1-byte ASCII characters).
+                </p>
+                <p>
+                    When referring to registers in assembly language, the names are not case-sensitive. For example, the names EAX and eax refer
+                    to the same register.
+                </p>
+                <p>
+                    Modern x86-compatible processors are capable of addressing up to 232 bytes of memory: memory addresses are 32-bits wide.
+                    In the examples above, where we used labels to refer to memory regions, these labels are actually replaced
+                    by the assembler with 32-bit quantities that specify addresses in memory. In addition to supporting referring
+                    to memory regions by labels (i.e. constant values), the x86 provides a flexible scheme for computing
+                    and referring to memory addresses: up to two of the 32-bit registers and a 32-bit signed constant can
+                    be added together to compute a memory address. One of the registers can be optionally pre-multiplied
+                    by 2, 4, or 8.
+                </p>
+                <p>
+                    The addressing modes can be used with many x86 instructions (we'll describe them in the next section). Here we illustrate
+                    some examples using the movinstruction that moves data between registers and memory. This instruction
+                    has two operands: the first is the destination and the second specifies the source.
+                </p>
+            </div>
+            <div class="tab-pane" id="d">
+                <h3 class="tab-pane-head">Debugger module</h3>
+                <p>
+                    A debugger or debugging tool is a computer program that is used to test and debug other programs (the "target" program).
+                    The code to be examined might alternatively be running on an instruction set simulator (ISS), a technique
+                    that allows great power in its ability to halt when specific conditions are encountered, but which will
+                    typically be somewhat slower than executing the code directly on the appropriate (or the same) processor.
+                    Some debuggers offer two modes of operation, full or partial simulation, to limit this impact.
+                </p>
+                <p>
+                    A "trap" occurs when the program cannot normally continue because of a programming bug or invalid data. For example, the
+                    program might have tried to use an instruction not available on the current version of the CPU or attempted
+                    to access unavailable or protected memory. When the program "traps" or reaches a preset condition, the
+                    debugger typically shows the location in the original code if it is a source-level debugger or symbolic
+                    debugger, commonly now seen in integrated development environments. If it is a low-level debugger or
+                    a machine-language debugger it shows the line in the disassembly (unless it also has online access to
+                    the original source code and can display the appropriate section of code from the assembly or compilation).
+                </p>
+            </div>
+            <div class="tab-pane" id="e">
+                <h3 class="tab-pane-head">Finding patterns module</h3>
+                <p>
+                The purpose of this module is to find the sequences in the debugged assembly code. By finding these sequences , the beginner in
+                reverse engineering will be able to understand the flow of assembly instructions and what does they mean.
+                </p>                
+                <p> In this system, there are about 45 sequnces identified over 5 different concepts in C language</p>
+
+                <p>
+                Meanings of the identified sequences when translated into C language are shown. 
+                The sequences are also displayed in tabular wise and also in Full detail wise. Count of each individual sequence is also displayed
+                A bar graph displaying the all the sequences with its count is also present.
+                </p>
+            
+                
+            </div>
+            <div class="tab-pane" id="f">
+                <h3 class="tab-pane-head">Help</h3>
+                <p>
+                    Most programming languages are fairly processor-independent. While they may have specific features that rely on certain processor
+                    abilities, they are more likely to be operating-system-specific than processor-specific. These high-level
+                    programming languages are built for the express purpose of providing distance between the programmer
+                    and the hardware architecture. This is for several reasons. While portability is one of them, probably
+                    more important is the ability to provide a friendlier model that is geared more towards how programmers
+                    think as opposed to how the chip is wired.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- /tabs -->
+</div>

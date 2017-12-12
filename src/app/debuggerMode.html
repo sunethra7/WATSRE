@@ -1,0 +1,73 @@
+<!--Add section starts here-->
+<div class="debugger-wrapper">
+
+  <article class="instruction-article">
+    <!--<h1 *ngIf="addNumberBoolean">Add {{selectedRegister1}},{{valueToAdd}} = {{outputValue}}</h1>
+      <h1 *ngIf="addRegisterBoolean" >Add {{selectedRegister2}},{{selectedRegister3}} = {{outputValue}}</h1>-->
+
+    <!--Actual table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="input-head">Input Area</th>
+          <th class="register-head">Registers</th>
+          <th class="memory-head">Memory Stack</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-rows">
+          <td class="input-row">
+            <div class="form-group">
+              <td class="instruction-box">
+                <textarea [(ngModel)]="textAreaValue" rows="20" cols="50" name="comment" align="left" form="usrform">
+                </textarea>
+                <div class="debug-btn">
+                  <button type="button" class="btn btn-primary" (click)="executeInstructions()">Start</button>
+                </div>
+                <select class="form-control debug-select" [(ngModel)]="selectedAssemblyCode">
+                  <option *ngFor="let a of AssemblyCode" [value]="a">{{a}}</option>
+                </select>
+                <div class="debug-btn2">
+                  <button type="button" class="btn btn-primary" (click)="showAssemblyCode()">Submit</button>
+                </div>
+              </td>
+            </div>
+
+          </td>
+          <td class="registers-row">
+            <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+              <div *ngIf="checkIfRegister(r)">
+                <tr>
+                  <td class="arrow-highlight" ng-bind-html>
+                    <i class="{{r.arrow}}" aria-hidden="true"></i>
+                  </td>
+                  <td class="right-name">{{r.name}}</td>
+                  <td class="right-arrow">
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                  </td>
+                  <td class="reg-name">{{r.value}}</td>
+                </tr>
+              </div>
+            </div>
+          </td>
+          <td class="memory-row">
+            <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+              <div *ngIf="checkIfMemory(r)">
+                <tr>
+                  <td class="arrow-highlight" ng-bind-html>
+                    <i class="{{r.arrow}}" aria-hidden="true"></i>
+                  </td>
+                  <td class="right-name">{{r.name}}</td>
+                  <td class="right-arrow">
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                  </td>
+                  <td class="reg-name">{{r.value}}</td>
+                </tr>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+</div>

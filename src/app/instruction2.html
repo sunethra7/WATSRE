@@ -1,0 +1,2781 @@
+<div class="clearfix">
+    
+    
+      <!-- Trigger the modal with a button -->
+      <div class="modalBtn">
+        *Cick on the steps in the given order or click this Readme button
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">ReadMe</button>
+    
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+    
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+              </div>
+              <div class="modal-body">
+                <p>Some text in the modal.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+    
+    <!-- modal 1 -->
+    <div id="myModal1" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+    
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h2 class="modal-title">Step 1</h2>
+            </div>
+            <div class="modal-body">
+              <i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
+              <h3>Select an instruction here.</h3>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    <!-- Modal 2 -->
+      <div id="myModal2" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+    
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title">Step 2</h2>
+              </div>
+              <div class="modal-body">
+                  <i class="fa fa-info-circle fa-2x" aria-hidden="true"></i>
+                <h3>Input your data here</h3>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+     <!-- Modal 3 -->
+     <div id="myModal3" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+    
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h2 class="modal-title">Step 3</h2>
+            </div>
+            <div class="modal-body">
+                <i class="fa fa-info-circle fa-2x" aria-hidden="true"></i>
+              <h3>Changes in the values of registers according to your input is show here </h3>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    
+    <!-- Modal 4 -->
+    <div id="myModal4" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+    
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h2 class="modal-title">Step 4</h2>
+            </div>
+            <div class="modal-body">
+                <i class="fa fa-info-circle fa-2x" aria-hidden="true"></i>
+              <h3>Changes in the values of Memory according to your input is show here </h3>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+      
+      <!-- Modal 5 -->
+     <div id="myModal5" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+    
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h2 class="modal-title">Step5</h2>
+            </div>
+            <div class="modal-body">
+                <i class="fa fa-info-circle fa-2x" aria-hidden="true"></i>
+              <h4>Change in the label values for JMP, CMP and RET instuctions</h4>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    
+    
+      <!-- Modal 6-->
+     <div id="myModal6" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+    
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h2 class="modal-title">Step3</h2>
+            </div>
+            <div class="modal-body">
+                <i class="fa fa-info-circle fa-2x" aria-hidden="true"></i>
+              <h4>Change in the label values for JMP, CMP, CALL and RET instuctions</h4>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    
+    
+      <div>
+    
+        <nav class="instructions-wrapper">
+          <div class="operations-block">
+            <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal1">Step 1</button></i>
+            <h3>Arithmetic Instructions</h3>
+             <div class="btn-grp" role="group" aria-label="...">
+              <button type="button" (click)="showAddSection()" class="btn btn-primary">ADD</button>
+              <button type="button" (click)="showSubSection()" class="btn btn-primary">SUB</button>
+              <button type="button" (click)="showMulSection()" class="btn btn-primary">IMUL</button>
+            </div>
+            <div class="btn-secong-grp" role="group" aria-label="...">
+              <button type="button" (click)="showDivSection()" class="btn btn-primary">IDIV</button>
+              <button type="button" (click)="showIncSection()" class="btn btn-primary">INC</button>
+              <button type="button" (click)="showDecSection()" class="btn btn-primary">DEC</button>
+            </div>
+          </div>
+          <div class="operations-block">
+            <h3>Bit wise Operations</h3>
+            <div class="btn-grp" role="group" aria-label="...">
+              <button type="button" (click)="showAndSection()" class="btn btn-primary">AND</button>
+              <button type="button" (click)="showORSection()" class="btn btn-primary">OR</button>
+              <button type="button" (click)="showXORSection()" class="btn btn-primary">XOR</button>
+              <button type="button" (click)="showNOTSection()" class="btn btn-primary">NOT</button>
+            </div>
+          </div>
+          <div class="operations-block">
+            <h3>Branching</h3>
+            <div class="btn-grp" role="group" aria-label="...">
+              <button type="button" (click)="showCmpSection()" class="btn btn-primary">CMP</button>
+              <button type="button" (click)="showJmpSection()" class="btn btn-primary">JMP</button>
+              <button type="button" (click)="showJnzSection()" class="btn btn-primary">JNZ/JNE</button>
+              <button type="button" (click)="showJzSection()" class="btn btn-primary">JZ/JE</button>
+              <br>
+              <br>
+              <button type="button" (click)="showJGSection()" class="btn btn-primary">JG/JNLE</button>
+              <button type="button" (click)="showJGESection()" class="btn btn-primary">JGE/JNL</button>
+              <button type="button" (click)="showJLSection()" class="btn btn-primary">JL/JNGE</button>
+              <button type="button" (click)="showJLESection()" class="btn btn-primary">JLE/JNG</button>
+            </div>
+          </div>
+          <div class="operations-block">
+            <h3>Data Movement</h3>
+            <div class="btn-grp" role="group" aria-label="...">
+              <button type="button" (click)="showMovSection()" class="btn btn-primary">MOV</button>
+              <button type="button" (click)="showLeaSection()" class="btn btn-primary">LEA</button>
+            </div>
+          </div>
+          <div class="operations-block">
+            <h3>Stack Management</h3>
+            <div class="btn-grp" role="group" aria-label="...">
+              <button type="button" (click)="showPushSection()" class="btn btn-primary">PUSH</button>
+              <button type="button" (click)="showPopSection()" class="btn btn-primary">POP</button>
+            </div>
+          </div>
+          <div class="operations-block">
+            <h3>Functions</h3>
+            <div class="btn-grp" role="group" aria-label="...">
+              <button type="button" (click)="showCallSection()" class="btn btn-primary">CALL</button>
+              <button type="button" (click)="showRetSection()" class="btn btn-primary">RET</button>
+            </div>
+          </div>
+        </nav>
+    
+    <!--Add section starts here-->
+    <div *ngIf="showAdd">
+    
+      <article class="instruction-article">
+        <h3 *ngIf="addNumberBoolean" class="logic-Heading1">Add {{selectedRegister1}},{{valueToAdd}} = {{outputValue}}</h3>
+        <h3 *ngIf="addRegisterBoolean" class="logic-Heading2">Add {{selectedRegister2}},{{selectedRegister3}} = {{outputValue}}</h3>
+    
+        <!--My table add-->
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="input-head">
+                <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+              <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                </i>Input Area</th>
+              <th class="register-head">
+                  <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                        </i>Registers</th>
+              <th class="memory-head">
+                  <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                        </i>Memory Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1) ADD Register - Immediate</p>
+                    <p>ADD Memory - Immediate</p>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <input type="string" class="form-control" required [(ngModel)]="valueToAdd" #name="ngModel" pattern="[a-fA-F0-9]+$">
+                      <button type="button" class="btn btn-primary" [disabled]="name.hasError('pattern')|| name.hasError('required')" (click)="addNumber()">Add</button>
+                      <div [hidden]="!name.hasError('pattern')" class="alert alert-danger">Enter correct input</div>
+                    </div>
+                  </td>
+                </div>
+                <div>
+                  <td class="instruction-box">
+                    <p>2) ADD Register - Register</p>
+                    <p>ADD Register - Memory</p>
+                    <p>ADD Memory - Register</p>
+                    <select [(ngModel)]="selectedRegister2" class="form-control first-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister3" class="form-control second-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <button type="button" class="btn btn-primary" (click)="addRegister()">Add</button>
+                        <!-- <div *ngIf="selectedRegister2==selectedRegister3" class="alert alert-danger">Can't select similar registers</div> -->
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <textarea rows="8" cols="130" name="comment" form="usrform" align="left" readonly>
+          add — Integer Addition
+          The add instruction adds together its two operands, storing the result in its first operand. 
+          Note, whereas both operands may be registers, at most one operand may be a memory location.
+          Syntax:
+          add <reg>,<reg>
+          add <reg>,<mem>
+          add <mem>,<reg>
+          add <reg>,<con>
+          add <mem>,<con>
+        </textarea>
+      </article>
+    </div>
+    
+    <!--Sub section starts here-->
+    <div *ngIf="showSub">
+    
+      <article class="instruction-article">
+    
+        <h3 *ngIf="subNumberBoolean">Sub {{selectedRegister1}},{{valueToAdd}} = {{outputValue}}</h3>
+        <h3 *ngIf="subRegisterBoolean">Sub {{selectedRegister2}},{{selectedRegister3}} = {{outputValue}}</h3>
+    
+        <!--My table sub-->
+    
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1) SUB Register - Immediate</p>
+                    <p>SUB Memory - Immediate</p>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <input type="string" class="form-control" required [(ngModel)]="valueToAdd" #name="ngModel" pattern="[a-fA-F0-9]+$">
+                      <button type="button" class="btn btn-primary" [disabled]="name.hasError('pattern')|| name.hasError('required')" (click)="subNumber()">Sub</button>
+                      <div [hidden]="!name.hasError('pattern')" class="alert alert-danger">Enter correct input</div>
+                    </div>
+                  </td>
+                </div>
+                <div>
+                  <td class="instruction-box">
+                    <p>2) SUB Register - Register</p>
+                    <p>SUB Register - Memory</p>
+                    <p>SUB Memory - Register</p>
+                    <select [(ngModel)]="selectedRegister2" class="form-control first-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister3" class="form-control second-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <button type="button" class="btn btn-primary" (click)="subRegister()">Sub</button>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <!-- <td style="width: 72px;">{{r.arrow}}</td> -->
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <textarea rows="8" cols="130" name="comment" form="usrform" align="left" readonly>
+              Sub - Subtraction
+          The sub instruction stores in the value of its first operand the result of subtracting the value of its second operand from the value of its first operand. 
+          As with add
+          Syntax
+          sub <reg>,<reg>
+          sub <reg>,<mem>
+          sub <mem>,<reg>
+          sub <reg>,<con>
+          sub <mem>,<con>
+          Examples
+          sub eax, ebx — eax ← eax - ebx
+          sub eax, 216 — subtract 216 from the value stored in EAX>
+        </textarea>
+      </article>
+    </div>
+    
+    <!--Multiplication goes here-->
+    <div *ngIf="showMul">
+      <article class="instruction-article">
+        <h3 *ngIf="mulNumberBoolean">Mul {{selectedRegister1}},{{valueToAdd}} = {{outputValue}}</h3>
+        <h3 *ngIf="mulRegisterBoolean">Mul {{selectedRegister2}},{{selectedRegister3}} = {{outputValue}}</h3>
+        <h3 *ngIf="mulRegisterTwoBoolean">Mul {{selectedRegister4}},{{selectedRegister5}},{{valueToAdd2}} = {{outputValue}}</h3>
+    
+        <!--My table Mul-->
+    
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                  <div>
+                  <td class="instruction-box">
+                    <p>1) IMUL Register - Register</p>
+                    <p>IMUL Register - Memory</p>                
+                    <select [(ngModel)]="selectedRegister2" class="form-control first-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister3" class="form-control second-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <button type="button" class="btn btn-primary" (click)="mulRegister()">Mul</button>
+                  </td>
+                </div>
+                <div>
+                  <td class="instruction-box">
+                    <p>3) IMUL Register - Register - Immediate</p>
+                    <p>IMUL Register - Memory - Immediate</p>               
+                    <select [(ngModel)]="selectedRegister4" class="form-control first-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister5" class="form-control second-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <input type="string" class="form-control" required [(ngModel)]="valueToAdd2">
+                    <button type="button" class="btn btn-primary" (click)="mulRegister2()">Mul</button>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    
+    
+        <textarea rows="8" cols="130" name="comment" align="left" form="usrform">
+          imul — Integer Multiplication
+          The imul instruction has two basic formats: two-operand (first two syntax listings above) and three-operand (last two syntax listings above).
+          The two-operand form multiplies its two operands together and stores the result in the first operand. The result (i.e. first) operand must be a register.
+          The three operand form multiplies its second and third operands together and stores the result in its first operand. Again, the result operand must be a register. Furthermore, the third operand is restricted to being a constant value.
+          Syntax
+          imul <reg32>,<reg32>
+          imul <reg32>,<mem>
+          imul <reg32>,<reg32>,<con>
+          imul <reg32>,<mem>,<con>
+          Examples
+          imul eax, [var] — multiply the contents of EAX by the 32-bit contents of the memory location var. Store the result in EAX.
+          imul esi, edi, 25 — ESI → EDI * 25
+        </textarea>
+      </article>
+    </div>
+    
+    <!--Divison goes here-->
+    <div *ngIf="showDiv">
+      <article class="instruction-article">
+        <h3 *ngIf="divNumberBoolean">div {{selectedRegister1}} -> Quotient : {{outputValue}}, Remainder : {{remainderToDisplay}}</h3>
+        <!-- <h1>AND {{selectedRegister2}},{{selectedRegister3}} = Quotient: {{outputValue}} Remainder: {{remainderToDisplay}}</h1> -->
+        <!--My table Div-->
+    
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1) IDIV Register</p>
+                    <p>IDIV Memory</p>
+                    <input type="string" class="form-control" required [(ngModel)]="valueToAdd" #name="ngModel" pattern="[a-fA-F0-9]+$">
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <button type="button" class="btn btn-primary" (click)="divNumber()">Div</button>
+                    </div>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    
+    
+        <textarea rows="8" cols="130" name="comment" align="left" form="usrform">
+          idiv — Integer Division
+          The idiv instruction divides the contents of the 64 bit integer EDX:EAX (constructed by viewing EDX as the most significant four bytes and EAX as the least significant four bytes) by the specified operand value. The quotient result of the division is stored into EAX, while the remainder is placed in EDX.
+          Syntax
+          idiv <reg32>
+          idiv <mem>
+          Examples
+          idiv ebx — divide the contents of EDX:EAX by the contents of EBX. Place the quotient in EAX and the remainder in EDX.
+          idiv DWORD PTR [var] — divide the contents of EDX:EAX by the 32-bit value stored at memory location var. Place the quotient in EAX and the remainder in EDX.
+        </textarea>
+      </article>
+    </div>
+    
+    
+    <!--Move goes here-->
+    <div *ngIf="showMov">
+      <article class="instruction-article">
+           
+        <h3 *ngIf="movNumberBoolean">mov {{selectedRegister1}},{{valueToAdd}} </h3>
+        <h3 *ngIf="movRegisterBoolean">mov {{selectedRegister2}},{{selectedRegister3}} </h3>
+        <!--My table MOV-->
+    
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1) MOV register - immediate</p>
+                    <p>MOV register - memory</p>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <input type="string" class="form-control" required [(ngModel)]="valueToAdd" #name="ngModel" pattern="[A-Fa-f0-9]+$">
+                      <button type="button" class="btn btn-primary" [disabled]="name.hasError('pattern')|| name.hasError('required')" (click)="movNumber()">Mov</button>
+                      <div [hidden]="!name.hasError('pattern')" class="alert alert-danger">Enter correct input</div>
+                    </div>
+                  </td>
+                </div>
+                <div>
+                  <td class="instruction-box">
+                    <p>2) MOV register - immediate</p>
+                    <p>MOV memory - memory</p>
+                    <select [(ngModel)]="selectedRegister2" class="form-control first-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister3" class="form-control second-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <button type="button" class="btn btn-primary" (click)="movRegister()">Mov</button>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+          mov — Move (Opcodes: 88, 89, 8A, 8B, 8C, 8E, ...)
+          The mov instruction copies the data item referred to by its second operand (i.e. register contents, memory contents, or a constant value) into the location referred to by its first operand (i.e. a register or memory). While register-to-register moves are possible, direct memory-to-memory moves are not. In cases where memory transfers are desired, the source memory contents must first be loaded into a register, then can be stored to the destination memory address.
+          Syntax
+          mov <reg>,<reg>
+          mov <reg>,<mem>
+          mov <mem>,<reg>
+          mov <reg>,<const>
+          mov <mem>,<const>
+          Examples
+          mov eax, ebx — copy the value in ebx into eax
+          mov byte ptr [var], 5 — store the value 5 into the byte at location var
+        </textarea>
+      </article>
+    </div>
+    
+    <div *ngIf="showLea">
+        <article class="instruction-article">
+          <h3 *ngIf="movNumberBoolean">lea {{selectedRegister1}},{{valueToAdd}} </h3>
+          <h3 *ngIf="movRegisterBoolean">lea {{selectedRegister2}},{{selectedRegister3}} </h3>
+      
+          <!--My table MOV-->
+      
+          <table class="table">
+            <thead>
+              <tr>
+                  <th class="input-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                      </i>Input Area</th>
+                    <th class="register-head">
+                        <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                              </i>Registers</th>
+                    <th class="memory-head">
+                        <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                              </i>Memory Stack</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-rows">
+                <td class="input-row">
+                  <div>
+                    <td class="instruction-box">
+                      <p>1) LEA Register - Immediate</p>
+                      <p>LEA Register - Memory</p>
+                      <select [(ngModel)]="selectedRegister1" class="form-control">
+                        <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                      </select>
+                      <div class="selected-register">
+                        <input type="string" class="form-control" required [(ngModel)]="valueToAdd" #name="ngModel" pattern="[A-Fa-f0-9]+$">
+                        <button type="button" class="btn btn-primary" [disabled]="name.hasError('pattern')|| name.hasError('required')" (click)="movNumber()">Mov</button>
+                        <div [hidden]="!name.hasError('pattern')" class="alert alert-danger">Enter correct input</div>
+                      </div>
+                    </td>
+                  </div>
+                  <div>
+                    <td class="instruction-box">
+                      <p>2) LEA Register - Immediate</p>
+                      <p>LEA Memory - Memory</p>
+                      <select [(ngModel)]="selectedRegister2" class="form-control first-select">
+                        <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                      </select>
+                      <select [(ngModel)]="selectedRegister3" class="form-control second-select">
+                        <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                      </select>
+                      <button type="button" class="btn btn-primary" (click)="movRegister()">Mov</button>
+                    </td>
+                  </div>
+                </td>
+                <td class="registers-row">
+                  <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                    <div *ngIf="checkIfRegister(r)">
+                      <tr>
+                        <td class="arrow-highlight" ng-bind-html>
+                          <i class="{{r.arrow}}" aria-hidden="true"></i>
+                        </td>
+                        <td class="right-name">{{r.name}}</td>
+                        <td class="right-arrow">
+                          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </td>
+                        <td class="reg-name">{{r.value}}</td>
+                      </tr>
+                    </div>
+                  </div>
+                </td>
+                <td class="memory-row">
+                  <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                    <div *ngIf="checkIfMemory(r)">
+                      <tr>
+                        <td class="arrow-highlight" ng-bind-html>
+                          <i class="{{r.arrow}}" aria-hidden="true"></i>
+                        </td>
+                        <td class="right-name">{{r.name}}</td>
+                        <td class="right-arrow">
+                          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </td>
+                        <td class="reg-name">{{r.value}}</td>
+                      </tr>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      
+          <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+              lea — Load effective address
+              The lea instruction places the address specified by its second operand into the register specified by its first operand. Note, the contents of the memory location are not loaded, only the effective address is computed and placed into the register. This is useful for obtaining a pointer into a memory region.
+              Syntax
+              lea <reg32>,<mem>
+              
+              Examples
+              lea edi, [ebx+4*esi] — the quantity EBX+4*ESI is placed in EDI.
+              lea eax, [var] — the value in var is placed in EAX.
+              lea eax, [val] — the value val is placed in EAX
+          </textarea>
+        </article>
+      </div>
+    
+    <!--Increment section starts here-->
+    <div *ngIf="showInc">
+    
+      <article class="instruction-article">
+        <h1 *ngIf="incBoolean">inc {{selectedRegister1}} = {{outputValue}}</h1>
+    
+        <!--My table INC-->
+    
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1) INC register</p>
+                    <p>INC memory</p>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <button type="button" class="btn btn-primary" (click)="incNumber()">Inc</button>
+                    </div>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+          The inc instruction increments the contents of its operand by one. 
+          Syntax
+          inc <reg>
+          inc <mem>
+        </textarea>
+      </article>
+    </div>
+    
+    
+    <!--Decrement section starts here-->
+    <div *ngIf="showDec">
+    
+      <article class="instruction-article">
+        <h3 *ngIf="decBoolean">dec {{selectedRegister1}},{{valueToAdd}} = {{outputValue}}</h3>
+    
+        <!--My table Dec-->
+    
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1) DEC register</p>
+                    <p>DEC memory</p>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <button type="button" class="btn btn-primary" (click)="decNumber()">Dec</button>
+                    </div>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+          The dec instruction decrements the contents of its operand by one.
+          dec <reg>
+          dec <mem>
+        </textarea>
+      </article>
+    </div>
+    
+   <!--Push section starts here-->
+<div *ngIf="showPush">
+    
+      <article class="instruction-article">
+        <h3 *ngIf="pushboolean">push {{selectedRegister1}} </h3>
+        <h3 *ngIf="pushNumberBoolean">push {{valueToAdd}} </h3>
+    
+        <!--My table PUSH-->
+    
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1) Push Register</p>
+                    <p>Push Memory</p>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <button type="button" class="btn btn-primary" (click)="pushRegister()">Push</button>
+                    </div>
+                  </td>
+                </div>
+                <div>
+                    <td class="instruction-box">
+                      <p>1) Push Immediate</p>                 
+                      
+                      <div class="selected-register">
+                          <input type="string" class="form-control" required [(ngModel)]="valueToAdd" #name="ngModel" pattern="[A-Fa-f0-9]+$">
+                          <button type="button" class="btn btn-primary" [disabled]="name.hasError('pattern')|| name.hasError('required')" (click)="pushNumber()">Push</button>
+                          <div [hidden]="!name.hasError('pattern')" class="alert alert-danger">Enter correct input</div>
+                        </div>
+                    </td>
+                  </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+          push — Push stack (Opcodes: FF, 89, 8A, 8B, 8C, 8E, ...)
+          The push instruction places its operand onto the top of the hardware supported stack in memory. Specifically, push first decrements ESP by 4, then places its operand into the contents of the 32-bit location at address [ESP]. ESP (the stack pointer) is decremented by push since the x86 stack grows down - i.e. the stack grows from high addresses to lower addresses.
+          Syntax
+          push <reg32>
+          push <mem>
+          push <con32>
+          Examples
+          push eax — push eax on the stack
+          push [var] — push the 4 bytes at address var onto the stack
+        </textarea>
+      </article>
+    </div>
+    <!--Pop section starts here-->
+    <div *ngIf="showPop">
+    
+      <article class="instruction-article">
+          <h3 *ngIf="popboolean">pop {{selectedRegister1}} </h3>
+    
+        <!--My table POP-->
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1) Pop Register</p>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <button type="button" class="btn btn-primary" (click)="popRegister()">Pop</button>
+                    </div>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+          pop — Pop stack
+          The pop instruction removes the 4-byte data element from the top of the hardware-supported stack into the specified operand (i.e. register or memory location). It first moves the 4 bytes located at memory location [SP] into the specified register or memory location, and then increments SP by 4.
+          Syntax
+          pop <reg32>
+          pop <mem>
+          Examples
+          pop edi — pop the top element of the stack into EDI.
+          pop [ebx] — pop the top element of the stack into memory at the four bytes starting at location EBX.
+        </textarea>
+      </article>
+    </div>
+    
+    <!--AND goes here-->
+    <div *ngIf="showAnd">
+      <article class="instruction-article">
+        <h3 *ngIf="addNumberBoolean" class="logic-Heading1">And {{selectedRegister1}},{{valueToAdd}} = {{outputValue}}</h3>
+        <h3 *ngIf="addRegisterBoolean" class="logic-Heading2">And {{selectedRegister2}},{{selectedRegister3}} = {{outputValue}}</h3>
+        <!--My table AND-->
+    
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1)AND Register - Immediate</p>
+                    <p>AND Memory - Immediate</p>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <input type="string" class="form-control" required [(ngModel)]="valueToAdd" #name="ngModel" pattern="[a-fA-F0-9]+$">
+                      <button type="button" class="btn btn-primary" [disabled]="name.hasError('pattern')|| name.hasError('required')" (click)="andNumber()">And</button>
+                      <div [hidden]="!name.hasError('pattern')" class="alert alert-danger">Enter correct input</div>
+                    </div>
+                  </td>
+                </div>
+                <div>
+                  <td class="instruction-box">
+                    <p>2)AND Register - Register</p>
+                    <p>AND Register - Memory</p>
+                    <p>AND Memory - Register</p>
+                    <select [(ngModel)]="selectedRegister2" class="form-control first-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister3" class="form-control second-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <button type="button" class="btn btn-primary" (click)="andRegister()">And</button>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+            and - bitwise and
+            This instruction perform the and logical operation on their operands, placing the result in the first operand location.
+          and <reg>,<reg>
+          and <reg>,<mem>
+          and <mem>,<reg>
+          and <reg>,<con>
+          and <mem>,<con></textarea>
+      </article>
+    </div>
+    
+    
+    <!--OR goes here-->
+    <div *ngIf="showOR">
+        <article class="instruction-article">
+        <h3 *ngIf="orNumberBoolean" class="logic-Heading1"> Or{{selectedRegister1}},{{valueToAdd}} = {{outputValue}}</h3>
+        <h3 *ngIf="orRegisterBoolean" class="logic-Heading2"> Or {{selectedRegister2}},{{selectedRegister3}} = {{outputValue}}</h3>
+        <!--<h1>Div {{selectedRegister2}},{{selectedRegister3}} = Quotient: {{outputValue}} Remainder: {{remainderToDisplay}}</h1>-->
+    
+        <!--My table Or-->
+    
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1) Register - Immediate</p>
+                    <p>   Memory - Immediate</p>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <input type="string" class="form-control" required [(ngModel)]="valueToAdd" #name="ngModel" pattern="[a-fA-F0-9]+$">
+                      <button type="button" class="btn btn-primary" [disabled]="name.hasError('pattern')|| name.hasError('required')" (click)="orNumber()">Or</button>
+                      <div [hidden]="!name.hasError('pattern')" class="alert alert-danger">Enter correct input</div>
+                    </div>
+                  </td>
+                </div>
+                <div>
+                  <td class="instruction-box">
+                    <p>2) OR Register - Register</p>
+                    <p>OR Register - Memory</p>
+                    <select [(ngModel)]="selectedRegister2" class="form-control first-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister3" class="form-control second-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <button type="button" class="btn btn-primary" (click)="orRegister()">Or</button>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+            or - bitwise or
+            This instruction perform the or logical operation on their operands, placing the result in the first operand location.
+          or <reg>,<reg>
+          or <reg>,<mem>
+          or <mem>,<reg>
+          or <reg>,<con>
+          or <mem>,<con>
+        </textarea>
+      </article>
+    </div>
+    
+    
+    <!--XOR goes here-->
+    <div *ngIf="showXOR">
+        <article class="instruction-article">
+        <h3 *ngIf="xorNumberBoolean" class="logic-Heading1">xor {{selectedRegister1}},{{valueToAdd}} = {{outputValue}}</h3>
+        <h3 *ngIf="xorRegisterBoolean" class="logic-Heading2">xor {{selectedRegister2}},{{selectedRegister3}} = {{outputValue}}</h3>
+      
+        <!--<h1>Div {{selectedRegister2}},{{selectedRegister3}} = Quotient: {{outputValue}} Remainder: {{remainderToDisplay}}</h1>-->
+    
+        <!--My table XOR-->
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1) XOR Register - Immediate</p>
+                    <p>XOR Memory - Immediate</p>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <input type="string" class="form-control" required [(ngModel)]="valueToAdd" #name="ngModel" pattern="[a-fA-F0-9]+$">
+                      <button type="button" class="btn btn-primary" [disabled]="name.hasError('pattern')|| name.hasError('required')" (click)="xorNumber()">Xor</button>
+                      <div [hidden]="!name.hasError('pattern')" class="alert alert-danger">Enter correct input</div>
+                    </div>
+                  </td>
+                </div>
+                <div>
+                  <td class="instruction-box">
+                    <p>2)XOR Register - Register</p>
+                    <p>XOR Register - Memory</p>
+                    <select [(ngModel)]="selectedRegister2" class="form-control first-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister3" class="form-control second-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <button type="button" class="btn btn-primary" (click)="xorRegister()">Xor</button>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+          xor - bitwise xor
+          This instruction perform the xor logical operation on their operands, placing the result in the first operand location.
+          xor <reg>,<reg>
+          xor <reg>,<mem>
+          xor <mem>,<reg>
+          xor <reg>,<con>
+          xor <mem>,<con>
+        </textarea>
+      </article>
+    </div>
+    
+    
+    <!--NOT goes here-->
+    <div *ngIf="showNOT">
+        <article class="instruction-article">
+        <h3 *ngIf="notNumberboolean" class="logic-Heading1">not {{selectedRegister1}} = {{outputValue}}</h3>
+        <!--<h1>Div {{selectedRegister2}},{{selectedRegister3}} = Quotient: {{outputValue}} Remainder: {{remainderToDisplay}}</h1>-->
+    
+        <!--My table NOT-->
+    
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1) NOT Register</p>
+                    <p>NOT Memory</p>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <button type="button" class="btn btn-primary" (click)="notNumber()">Not</button>
+                    </div>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+          not — Bitwise Logical Not
+          Logically negates the operand contents (that is, flips all bit values in the operand).
+          Syntax
+          not <reg>
+          not <mem>
+          Example
+          not BYTE PTR [var] — negate all bits in the byte at the memory location var.
+        </textarea>
+      </article>
+    </div>
+    
+    <!--Jump section starts here-->
+    <div *ngIf="showJmp">
+    
+        <article class="instruction-article">
+          <h3 *ngIf="callNumberBoolean" class="logic-Heading1">Jmp {{selectedRegister1}}</h3>
+    
+        
+            <!--My table NOT-->
+        
+            <table class="table">
+              <thead>
+                <tr>
+                    <th class="input-head">
+                        <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                        </i>Input Area</th>
+                      <th class="Label-head">
+                          <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                              <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal6">Step 3</button>
+                                </i>Label</th>
+        
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-rows">
+                  <td class="input-row">
+                    <div>
+                      <td class="instruction-box">
+                        <p> 1) JMP Label</p>
+                       
+                        <select [(ngModel)]="selectedRegister1" class="form-control">
+                          <option *ngFor="let r of register2" [value]="r.name">{{r.name}}</option>
+                        </select>
+                        <div class="selected-register">
+                          <button type="button" class="btn btn-primary" (click)="callLabel()">JMP</button>
+                        </div>
+                      </td>
+                    </div>
+                  </td>
+                  <td class="registers-row">
+                    <div *ngFor="let r of register2; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                      <div *ngIf="checkIfLabel(r)">
+                        <tr class="reg-text">
+                          <td class="arrow-highlight" ng-bind-html>
+                            <i class="{{r.arrow}}" aria-hidden="true"></i>
+                          </td>
+                          <td class="right-name2">{{r.name}}</td>
+                          <td class="right-arrow">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                          </td>
+                          <td class="reg-name">{{r.value}}</td>
+                        </tr>
+                      </div>
+                    </div>
+                  </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+        
+            <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+                jmp — Jump
+                
+                Transfers program control flow to the instruction at the memory location indicated by the operand.
+                Syntax
+                jmp <label>
+                
+                Example
+                jmp begin — Jump to the instruction labeled begin.
+            </textarea>
+          </article>
+    </div>
+    
+    
+    <!--Cmp section starts here-->
+    <div *ngIf="showCmp">
+    
+      <article class="instruction-article">
+    
+        <h3 *ngIf="cmpNumberBoolean">Cmp {{selectedRegister1}},{{valueToAdd}} = {{outputValue}}</h3>
+        <h3 *ngIf="cmpRegisterBoolean">Cmp {{selectedRegister2}},{{selectedRegister3}} = {{outputValue}}</h3>
+    
+        <!--My table CMP-->
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1) CMP Register - Immediate</p>
+                    <p>CMP Memory - Immediate</p>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <input type="string" class="form-control" required [(ngModel)]="valueToAdd" #name="ngModel" pattern="[a-fA-F0-9]+$">
+                      <button type="button" class="btn btn-primary" [disabled]="name.hasError('pattern')|| name.hasError('required')" (click)="cmpNumber()">Cmp</button>
+                      <div [hidden]="!name.hasError('pattern')" class="alert alert-danger">Enter correct input</div>
+                    </div>
+                  </td>
+                </div>
+                <div>
+                  <td class="instruction-box">
+                    <p>2) CMP register - register;</p>
+                    <p>Sub register - memory;</p>
+                    <select [(ngModel)]="selectedRegister2" class="form-control first-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister3" class="form-control second-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <button type="button" class="btn btn-primary" (click)="cmpRegister()">Cmp</button>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+            cmp — Compare
+            Compare the values of the two specified operands, setting the condition codes in the machine status word appropriately. 
+            This instruction is equivalent to the sub instruction, except the result of the subtraction is discarded instead of replacing the first operand.
+            Syntax
+            cmp <reg>,<reg>
+            cmp <reg>,<mem>
+            cmp <mem>,<reg>
+            cmp <reg>,<con>
+        </textarea>
+      </article>
+    </div>
+    
+    
+    <!--Jump if zero section starts here-->
+    <div *ngIf="showJnz">
+    
+      <article class="instruction-article">
+          <h3 *ngIf="jmpIfNotZeroNumberBoolean" class="logic-Heading1">JNZ {{selectedRegister1}},{{valueToAdd}} = {{outputValue}}</h3>
+          <h3 *ngIf="jmpIfNotZeroRegisterBoolean" class="logic-Heading2">JNZ {{selectedRegister2}},{{selectedRegister3}} = {{outputValue}}</h3>
+    
+        <!--My table JZ-->
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+                 <th class="label-head">
+                  <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal5">Step 5</button>
+                        </i>Label</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1) CMP Register - Immediate</p>
+                    <p>CMP Memory - Immediate</p>
+                    <p>JNZ</p>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <input type="string" class="form-control" required [(ngModel)]="valueToAdd" #name="ngModel" pattern="[a-fA-F0-9]+$">
+                      <div [hidden]="!name.hasError('pattern')" class="alert alert-danger">Enter correct input</div>
+                      <select [(ngModel)]="selectedRegister2" class="form-control">
+                          <option *ngFor="let r of register2" [value]="r.name">{{r.name}}</option>
+                        </select>
+                      <button type="button" class="btn btn-primary" [disabled]="name.hasError('pattern')|| name.hasError('required')"  (click)="jmpIfNotZeroNumber()">JNZ</button>
+                    </div>
+                  </td>
+                </div>
+                <div>
+                  <td class="instruction-box">
+                    <p>2) CMP Register - Register</p>
+                    <p>CMP Register - Memory</p>
+                    <p>JNZ</p>
+                    <select [(ngModel)]="selectedRegister2" class="form-control first-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister3" class="form-control second-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                        <option *ngFor="let r of register2" [value]="r.name">{{r.name}}</option>
+                      </select>
+                    <button type="button" class="btn btn-primary" (click)="jmpIfNotZeroRegister()">JNZ</button>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="registers-row">
+                  <div *ngFor="let r of register2; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                    <div *ngIf="checkIfLabel(r)">
+                      <tr>
+                        <td class="arrow-highlight" ng-bind-html>
+                          <i class="{{r.arrow}}" aria-hidden="true"></i>
+                        </td>
+                        <td class="right-name2">{{r.name}}</td>
+                        <td class="right-arrow">
+                          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </td>
+                        <td class="reg-name">{{r.value}}</td>
+                      </tr>
+                    </div>
+                  </div>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+            jcondition — Conditional Jump - JNE
+            If some specified condition is satisfied in conditional jump,
+            the control flow is transferred to a target instruction. 
+    
+            Syntax
+            jne <label> (jump when not equal)
+            Example
+            cmp eax, ebx
+            jne L1
+                
+            If the contents of EAX are not equal to the contents of EBX, jump to the label done. 
+            Otherwise, continue to the next instruction.
+          </textarea>
+      </article>
+    </div>
+    
+    <div *ngIf="showJz">
+    
+      <article class="instruction-article">
+          <h3 *ngIf="jmpZeroNumberBoolean" class="logic-Heading1">JZ {{selectedRegister1}},{{valueToAdd}} = {{outputValue}}</h3>
+          <h3 *ngIf="jmpZeroRegisterBoolean" class="logic-Heading2">JZ {{selectedRegister2}},{{selectedRegister3}} = {{outputValue}}</h3>
+    
+    
+        <!--My table JZ-->
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+                 <th class="label-head">
+                  <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal5">Step 5</button>
+                        </i>Label</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1) CMP Register - Immediate</p>
+                    <p> CMP Memory - Immediate</p>
+                    <p>JZ</p>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <input type="string" class="form-control" required [(ngModel)]="valueToAdd" #name="ngModel" pattern="[a-fA-F0-9]+$">
+                      <div [hidden]="!name.hasError('pattern')" class="alert alert-danger">Enter correct input</div>
+                      <select [(ngModel)]="selectedRegister2" class="form-control">
+                          <option *ngFor="let r of register2" [value]="r.name">{{r.name}}</option>
+                        </select>
+                      <button type="button" class="btn btn-primary" [disabled]="name.hasError('pattern')|| name.hasError('required')"  (click)="jmpZeroNumber()">JZ</button>
+                    </div>
+                  </td>
+                </div>
+                <div>
+                  <td class="instruction-box">
+                    <p>2) CMP Register - Register</p>
+                    <p>CMP Register - Memory</p>
+                    <p>JZ</p>
+                    <select [(ngModel)]="selectedRegister2" class="form-control first-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister3" class="form-control second-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                        <option *ngFor="let r of register2" [value]="r.name">{{r.name}}</option>
+                      </select>
+                    <button type="button" class="btn btn-primary" (click)="jmpZeroRegister()">JZ</button>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="registers-row">
+                  <div *ngFor="let r of register2; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                    <div *ngIf="checkIfLabel(r)">
+                      <tr>
+                        <td class="arrow-highlight" ng-bind-html>
+                          <i class="{{r.arrow}}" aria-hidden="true"></i>
+                        </td>
+                        <td class="right-name2">{{r.name}}</td>
+                        <td class="right-arrow">
+                          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </td>
+                        <td class="reg-name">{{r.value}}</td>
+                      </tr>
+                    </div>
+                  </div>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+         jcondition — Conditional Jump - JZ
+            If some specified condition is satisfied in conditional jump,
+            the control flow is transferred to a target instruction. 
+                    
+            Syntax
+            jz <label> (jump when last result was zero)
+            Example
+            cmp eax, ebx
+            jz L1
+                
+            If the contents of EAX are equal to the contents of EBX, jump to the label done. 
+            Otherwise, continue to the next instruction.
+        </textarea>
+      </article>
+    </div>
+    
+    
+    <div *ngIf="showJLE">
+    
+      <article class="instruction-article">
+          <h3 *ngIf="jmpLessThanEqualNumberBoolean" class="logic-Heading1">JLE {{selectedRegister1}},{{valueToAdd}} = {{outputValue}}</h3>
+          <h3 *ngIf="jmpLessThanEqualRegisterBoolean" class="logic-Heading2">JLE {{selectedRegister2}},{{selectedRegister3}} = {{outputValue}}</h3>
+    
+    
+        <!--My table JZ-->
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+                 <th class="label-head">
+                  <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal5">Step 5</button>
+                        </i>Label</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1) CMP Register - Immediate</p>
+                    <p>CMP Memory - Immediate</p>
+                    <p>JLE</p> 
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <input type="string" class="form-control" required [(ngModel)]="valueToAdd" #name="ngModel" pattern="[a-fA-F0-9]+$">
+                      <div [hidden]="!name.hasError('pattern')" class="alert alert-danger">Enter correct input</div>
+                      <select [(ngModel)]="selectedRegister2" class="form-control">
+                          <option *ngFor="let r of register2" [value]="r.name">{{r.name}}</option>
+                        </select>
+                      <button type="button" class="btn btn-primary" [disabled]="name.hasError('pattern')|| name.hasError('required')"  (click)="jmpLessThanEqualNumber()">JLE</button>
+                    </div>
+                  </td>
+                </div>
+                <div>
+                  <td class="instruction-box">
+                    <p>2) CMP Register - Register</p>
+                    <p>CMP Register - Memory</p>
+                    <p>JLE</p>
+                    <select [(ngModel)]="selectedRegister2" class="form-control first-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister3" class="form-control second-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                        <option *ngFor="let r of register2" [value]="r.name">{{r.name}}</option>
+                      </select>
+                    <button type="button" class="btn btn-primary" (click)="jmpLessThanEqualRegister()">JLE</button>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="registers-row">
+                  <div *ngFor="let r of register2; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                    <div *ngIf="checkIfLabel(r)">
+                      <tr>
+                        <td class="arrow-highlight" ng-bind-html>
+                          <i class="{{r.arrow}}" aria-hidden="true"></i>
+                        </td>
+                        <td class="right-name2">{{r.name}}</td>
+                        <td class="right-arrow">
+                          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </td>
+                        <td class="reg-name">{{r.value}}</td>
+                      </tr>
+                    </div>
+                  </div>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+            jcondition — Conditional Jump - JLE
+            If some specified condition is satisfied in conditional jump,
+            the control flow is transferred to a target instruction. 
+                    
+            Syntax
+            jle <label> (jump when less than or equal to)
+            Example
+            cmp eax, ebx
+            jle L1
+                
+            If the contents of EAX are less than or equal to the contents of EBX, jump to the label done. 
+            Otherwise, continue to the next instruction.
+        </textarea>
+      </article>
+    </div>
+    
+    <div *ngIf="showJL">
+    
+      <article class="instruction-article">
+          <h3 *ngIf="jmpLessThanNumberBoolean" class="logic-Heading1">JL {{selectedRegister1}},{{valueToAdd}} = {{outputValue}}</h3>
+          <h3 *ngIf="jmpLessThanRegisterBoolean" class="logic-Heading2">JL {{selectedRegister2}},{{selectedRegister3}} = {{outputValue}}</h3>
+    
+    
+        <!--My table JZ-->
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+                 <th class="label-head">
+                  <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal5">Step 5</button>
+                        </i>Label</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1)CMP Register - Immediate</p>
+                    <p>CMP Memory - Immediate</p>
+                    <p>JL</p>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <input type="string" class="form-control" required [(ngModel)]="valueToAdd" #name="ngModel" pattern="[a-fA-F0-9]+$">
+                      <div [hidden]="!name.hasError('pattern')" class="alert alert-danger">Enter correct input</div>
+                      <select [(ngModel)]="selectedRegister2" class="form-control">
+                          <option *ngFor="let r of register2" [value]="r.name">{{r.name}}</option>
+                        </select>
+                      <button type="button" class="btn btn-primary" [disabled]="name.hasError('pattern')|| name.hasError('required')"  (click)="jmpLessThanNumber()">JL</button>
+                    </div>
+                  </td>
+                </div>
+                <div>
+                  <td class="instruction-box">
+                    <p>2) CMP Register - Register;</p>
+                    <p>CMP Register - Memory;</p>
+                    <p>JL</p>
+                    <select [(ngModel)]="selectedRegister2" class="form-control first-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister3" class="form-control second-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                        <option *ngFor="let r of register2" [value]="r.name">{{r.name}}</option>
+                      </select>
+                    <button type="button" class="btn btn-primary" (click)="jmpLessThanRegister()">JL</button>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="registers-row">
+                  <div *ngFor="let r of register2; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                    <div *ngIf="checkIfLabel(r)">
+                      <tr>
+                        <td class="arrow-highlight" ng-bind-html>
+                          <i class="{{r.arrow}}" aria-hidden="true"></i>
+                        </td>
+                        <td class="right-name2">{{r.name}}</td>
+                        <td class="right-arrow">
+                          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </td>
+                        <td class="reg-name">{{r.value}}</td>
+                      </tr>
+                    </div>
+                  </div>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+            jcondition — Conditional Jump - JL
+            If some specified condition is satisfied in conditional jump,
+            the control flow is transferred to a target instruction. 
+                    
+            Syntax
+            jl <label> (jump when less than)
+            Example
+            cmp eax, ebx
+            jl L1
+                
+            If the contents of EAX are less than the contents of EBX, jump to the label done. 
+            Otherwise, continue to the next instruction.
+        </textarea>
+      </article>
+    </div>
+    
+    <div *ngIf="showJG">
+    
+      <article class="instruction-article">
+          <h3 *ngIf="jmpGreaterThanNumberBoolean" class="logic-Heading1">JG {{selectedRegister1}},{{valueToAdd}} = {{outputValue}}</h3>
+          <h3 *ngIf="jmpGreaterThanRegisterBoolean" class="logic-Heading2">JG {{selectedRegister2}},{{selectedRegister3}} = {{outputValue}}</h3>
+    
+    
+        <!--My table JZ-->
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                    </i>Input Area</th>
+                  <th class="register-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                            </i>Registers</th>
+                  <th class="memory-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                            </i>Memory Stack</th>
+                 <th class="label-head">
+                  <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal5">Step 5</button>
+                        </i>Label</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-rows">
+              <td class="input-row">
+                <div>
+                  <td class="instruction-box">
+                    <p>1)CMP Register - Immediate</p>
+                    <p>CMP Memory - Immediate</p>
+                    <p>JG</p>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <div class="selected-register">
+                      <input type="string" class="form-control" required [(ngModel)]="valueToAdd" #name="ngModel" pattern="[a-fA-F0-9]+$">
+                      <div [hidden]="!name.hasError('pattern')" class="alert alert-danger">Enter correct input</div>
+                      <select [(ngModel)]="selectedRegister2" class="form-control">
+                          <option *ngFor="let r of register2" [value]="r.name">{{r.name}}</option>
+                        </select>
+                      <button type="button" class="btn btn-primary" [disabled]="name.hasError('pattern')|| name.hasError('required')"  (click)="jmpGreaterThanNumber()">JG</button>
+                    </div>
+                  </td>
+                </div>
+                <div>
+                  <td class="instruction-box">
+                    <p>2) CMP Register - Register</p>
+                    <p>CMP Register - Memory</p>
+                    <p>JG</p>
+                    <select [(ngModel)]="selectedRegister2" class="form-control first-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister3" class="form-control second-select">
+                      <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                    </select>
+                    <select [(ngModel)]="selectedRegister1" class="form-control">
+                        <option *ngFor="let r of register2" [value]="r.name">{{r.name}}</option>
+                      </select>
+                    <button type="button" class="btn btn-primary" (click)="jmpGreaterThanRegister()">JG</button>
+                  </td>
+                </div>
+              </td>
+              <td class="registers-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfRegister(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="memory-row">
+                <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                  <div *ngIf="checkIfMemory(r)">
+                    <tr>
+                      <td class="arrow-highlight" ng-bind-html>
+                        <i class="{{r.arrow}}" aria-hidden="true"></i>
+                      </td>
+                      <td class="right-name">{{r.name}}</td>
+                      <td class="right-arrow">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </td>
+                      <td class="reg-name">{{r.value}}</td>
+                    </tr>
+                  </div>
+                </div>
+              </td>
+              <td class="registers-row">
+                  <div *ngFor="let r of register2; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                    <div *ngIf="checkIfLabel(r)">
+                      <tr>
+                        <td class="arrow-highlight" ng-bind-html>
+                          <i class="{{r.arrow}}" aria-hidden="true"></i>
+                        </td>
+                        <td class="right-name2">{{r.name}}</td>
+                        <td class="right-arrow">
+                          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </td>
+                        <td class="reg-name">{{r.value}}</td>
+                      </tr>
+                    </div>
+                  </div>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+            jcondition — Conditional Jump - JG
+            If some specified condition is satisfied in conditional jump,
+            the control flow is transferred to a target instruction. 
+                    
+            Syntax
+            jg <label> (jump when greater than)
+            Example
+            cmp eax, ebx
+            jg L1
+                
+            If the contents of EAX are greater than the contents of EBX, jump to the label done. 
+            Otherwise, continue to the next instruction.
+        </textarea>
+      </article>
+    </div>
+    
+    <div *ngIf="showJGE">
+        
+          <article class="instruction-article">
+              <h3 *ngIf="jmpGreaterThanEqualNumberBoolean" class="logic-Heading1">JGE {{selectedRegister1}},{{valueToAdd}} = {{outputValue}}</h3>
+              <h3 *ngIf="jmpGreaterThanEqualRegisterBoolean" class="logic-Heading2">JGE {{selectedRegister2}},{{selectedRegister3}} = {{outputValue}}</h3>
+        
+        
+            <!--My table JZ-->
+            <table class="table">
+              <thead>
+                <tr>
+                    <th class="input-head">
+                        <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                        </i>Input Area</th>
+                      <th class="register-head">
+                          <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                              <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">Step 3</button>
+                                </i>Registers</th>
+                      <th class="memory-head">
+                          <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                              <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal4">Step 4</button>
+                                </i>Memory Stack</th>
+                     <th class="label-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal5">Step 5</button>
+                            </i>Label</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-rows">
+                  <td class="input-row">
+                    <div>
+                      <td class="instruction-box">
+                        <p>1) CMP Register - Immediate</p>
+                        <p>CMP Memory - Immediate</p>
+                        <p>JGE</p>
+                        <select [(ngModel)]="selectedRegister1" class="form-control">
+                          <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                        </select>
+                        <div class="selected-register">
+                          <input type="string" class="form-control" required [(ngModel)]="valueToAdd" #name="ngModel" pattern="[a-fA-F0-9]+$">
+                          <div [hidden]="!name.hasError('pattern')" class="alert alert-danger">Enter correct input</div>
+                          <select [(ngModel)]="selectedRegister2" class="form-control">
+                              <option *ngFor="let r of register2" [value]="r.name">{{r.name}}</option>
+                            </select>
+                          <button type="button" class="btn btn-primary" [disabled]="name.hasError('pattern')|| name.hasError('required')"  (click)="jmpGreaterThanequal()">JGE</button>
+                        </div>
+                      </td>
+                    </div>
+                    <div>
+                      <td class="instruction-box">
+                        <p>2) CMP Register - Register</p>
+                        <p>CMP Register - Memory</p>
+                        <p>JGE</p>
+                        <select [(ngModel)]="selectedRegister2" class="form-control first-select">
+                          <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                        </select>
+                        <select [(ngModel)]="selectedRegister3" class="form-control second-select">
+                          <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+                        </select>
+                        <select [(ngModel)]="selectedRegister1" class="form-control">
+                            <option *ngFor="let r of register2" [value]="r.name">{{r.name}}</option>
+                          </select>
+                        <button type="button" class="btn btn-primary" (click)="jmpGreaterThanequalRegister()">JGE</button>
+                      </td>
+                    </div>
+                  </td>
+                  <td class="registers-row">
+                    <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                      <div *ngIf="checkIfRegister(r)">
+                        <tr>
+                          <td class="arrow-highlight" ng-bind-html>
+                            <i class="{{r.arrow}}" aria-hidden="true"></i>
+                          </td>
+                          <td class="right-name">{{r.name}}</td>
+                          <td class="right-arrow">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                          </td>
+                          <td class="reg-name">{{r.value}}</td>
+                        </tr>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="memory-row">
+                    <div *ngFor="let r of register; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                      <div *ngIf="checkIfMemory(r)">
+                        <tr>
+                          <td class="arrow-highlight" ng-bind-html>
+                            <i class="{{r.arrow}}" aria-hidden="true"></i>
+                          </td>
+                          <td class="right-name">{{r.name}}</td>
+                          <td class="right-arrow">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                          </td>
+                          <td class="reg-name">{{r.value}}</td>
+                        </tr>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="registers-row">
+                      <div *ngFor="let r of register2; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                        <div *ngIf="checkIfLabel(r)">
+                          <tr>
+                            <td class="arrow-highlight" ng-bind-html>
+                              <i class="{{r.arrow}}" aria-hidden="true"></i>
+                            </td>
+                            <td class="right-name2">{{r.name}}</td>
+                            <td class="right-arrow">
+                              <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            </td>
+                            <td class="reg-name">{{r.value}}</td>
+                          </tr>
+                        </div>
+                      </div>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+        
+            <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+                jcondition — Conditional Jump - JGE
+                If some specified condition is satisfied in conditional jump,
+                the control flow is transferred to a target instruction. 
+                        
+                Syntax
+                jge <label> (jump when greater than or equal to)
+                Example
+                cmp eax, ebx
+                jge L1
+                    
+                If the contents of EAX are greater than or equal the contents of EBX, jump to the label done. 
+                Otherwise, continue to the next instruction.
+            </textarea>
+          </article>
+        </div>
+    
+     
+    
+    
+    <!--CALL section starts here-->
+    <div *ngIf="showCall">
+      
+        <article class="instruction-article">
+            <h3 *ngIf="callNumberBoolean">call {{selectedRegister1}} </h3>
+      
+          <!--My table NOT-->
+      
+          <table class="table">
+            <thead>
+              <tr>
+                  <th class="input-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                      </i>Input Area</th>
+                  <th class="label-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal6">Step 3</button>
+                          </i>Label</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-rows">
+                <td class="input-row">
+                  <div>
+                    <td class="instruction-box">
+                      <p> 1) CALL Label</p>                 
+                      <select [(ngModel)]="selectedRegister1" class="form-control">
+                        <option *ngFor="let r of register2" [value]="r.name">{{r.name}}</option>
+                      </select>
+                      <div class="selected-register">
+                        <button type="button" class="btn btn-primary" (click)="callLabel()">CALL</button>
+                      </div>
+                    </td>
+                  </div>
+                </td>
+                <td class="registers-row">
+                  <div *ngFor="let r of register2; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                    <div *ngIf="checkIfLabel(r)">
+                      <tr class="reg-text">
+                        <td class="arrow-highlight" ng-bind-html>
+                          <i class="{{r.arrow}}" aria-hidden="true"></i>
+                        </td>
+                        <td class="right-name2">{{r.name}}</td>
+                        <td class="right-arrow">
+                          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </td>
+                        <td class="reg-name">{{r.value}}</td>
+                      </tr>
+                    </div>
+                  </div>
+                </td>
+                
+              </tr>
+            </tbody>
+          </table>
+      
+          <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+            Call instruction
+            These instructions implement a subroutine call and return. The call instruction first pushes the current code location onto
+            the hardware supported stack in memory (see the push instruction for details), and then performs an unconditional jump 
+            to the code location indicated by the label operand. Unlike the simple jump instructions, the call instruction saves the location 
+            to return to when the subroutine completes.
+                   
+            Syntax
+            call <label>
+          </textarea>
+        </article>
+      </div>
+      
+      <!--CALL section starts here-->
+    <div *ngIf="showRet">
+      
+        <article class="instruction-article">
+          <!-- <h1>Call {{selectedRegister2}},{{selectedRegister3}} = {{outputValue}}</h1> -->
+      
+          <!--My table NOT-->
+      
+          <table class="table">
+            <thead>
+              <tr>
+                  <th class="input-head">
+                      <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal2">Step 2</button>
+                      </i>Input Area</th>
+                  <th class="label-head">
+                    <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true">
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal6">Step 3</button>
+                          </i>Label</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-rows">
+                <td class="input-row">
+                  <div>
+                    <td class="instruction-box">
+                        <p> 1) RET Function</p>
+                        
+                         <select [(ngModel)]="selectedRegister1" class="form-control">
+                           <option *ngFor="let r of register2" [value]="r.name">{{r.name}}</option>
+                         </select>
+                         <div class="selected-register">
+                           <button type="button" class="btn btn-primary" (click)="callLabel()">CALL</button>
+                         </div>                             
+                    
+                      <div class="selected-register">
+                        <button type="button" class="btn btn-primary" (click)="retLabel()">RET</button>
+                      </div>
+                    </td>
+                  </div>
+                </td>
+                <td class="registers-row">
+                  <div *ngFor="let r of register2; let index =index;let isOdd=odd;let isEven=even" [class.oddRow]="isOdd" [class.evenRow]="isEven">
+                    <div *ngIf="checkIfLabel(r)">
+                      <tr>
+                        <td class="arrow-highlight" ng-bind-html>
+                          <i class="{{r.arrow}}" aria-hidden="true"></i>
+                        </td>
+                        <td class="right-name2">{{r.name}}</td>
+                        <td class="right-arrow">
+                          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </td>
+                        <td class="reg-name">{{r.value}}</td>
+                      </tr>
+                    </div>
+                  </div>
+                </td>
+              
+              </tr>
+            </tbody>
+          </table>
+      
+          <textarea rows="10" cols="100" name="comment" align="left" form="usrform">
+            Ret instrucion
+            The ret instruction implements a subroutine return mechanism. This instruction first pops a code location off the hardware
+            supported in-memory stack (see the pop instruction for details). It then performs an unconditional jump to the retrieved 
+            code location. 
+            Syntax
+            ret
+          </textarea>
+          </article>
+        </div>
+      </div>
+    </div>

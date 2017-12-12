@@ -1,0 +1,303 @@
+<!--Add section starts here-->
+<div class="finding-patternsWrapper clearfix">
+    <!-- Trigger the modal with a button -->
+    <div class="modalBtn">
+        Follow the steps (or) Click here
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Readme</button>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Overview of the Process</h4>
+                    </div>
+                    <div class="modal-body">
+                            <i class="fa fa-list-ul fa-2x" aria-hidden="true"></i>
+                        <h3>Click on the each step button in the order of the numbers and 
+                            perform accordingly</h3>
+                            
+                          <p>Step 1 : click on 'Choose file' button and select your input text file here from your Local machine</p>
+                          <p>Step 2 : Once the input file is selected, You can view the contents of it loaded here</p>
+                          <p>Step 3 : Click on the 'Run' button;
+                                      This button will be enabled only, if the file is choosen</p>
+                          
+                          <p>Step 4 : The reduced instructions are displayed here in the Output instruction area</p>
+                          <p>Step 5 : In this results area, the summary of instructions and sequences, the sequences list are shown</p>
+                          <p>Step 6 : Click on the 'Open Full view' button in oder to see the results in larger screen</p>
+                          <p>Step 7 : click on the 'Open sequences chart to view the bar chart of the sequences identified</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="pattern-filetype pull-left clearfix">
+        <p class="pull-left p-select">Select your input file here:</p>
+        <i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true">
+                <button type="button" class="btn btn-warning step1-btn" data-toggle="modal" data-target="#myModal2">
+                    Step 1</button> </i>
+        <input type="file" class="pull-left" (change)="changeListener($event)">
+   </div>
+   
+    <!-- Modal 2 -->
+    <div id="myModal2" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content 1-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Step 1</h2>
+                </div>
+                <div class="modal-body">
+                        <i class="fa fa-file-text fa-2x" aria-hidden="true"> </i>    
+                    <h3>
+                            Click on 'Choose file' button and select your input text file here from your Local machine
+                    </h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <div class="pull-left">
+      <button id="myButton" type="button" class="btn btn-primary pull-left run-btn" [disabled]="!disableFlag" (click)="outputAreaPopulate()">Run</button>
+        <i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true">
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal3">
+                Step 3</button>
+        </i>
+    </div>
+    <!-- Modal 3 -->
+    <div id="myModal3" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Step 3</h2>
+                </div>
+                <div class="modal-body">
+                        <i class="fa fa-info-circle fa-2x" aria-hidden="true"> </i>    
+                        <h3> Click on the 'Run' button;
+                        This button will be enabled only, if the file is choosen</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <table class="table bg-info">
+        <thead>
+            <tr>
+                <th class="input-head">
+                    <i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true">
+                        <button type="button" class="btn btn-warning run-btn" data-toggle="modal" data-target="#myModal4">
+                            Step 2</button>
+                    </i>Input Instruction Area</th>
+                <th class="output-head">
+                    <i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true">
+                        <button type="button" class="btn btn-warning run-btn" data-toggle="modal" data-target="#myModal5">
+                            Step 4</button>
+                    </i>Output Instruction Area</th>
+                <th class="results-head">
+                    <i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true">
+                        <button type="button" class="btn btn-warning run-btn" data-toggle="modal" data-target="#myModal6">
+                            Step 5</button>
+                    </i> Results Area
+                    <i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true">
+                        <button type="button" class="btn btn-warning run-btn" data-toggle="modal" data-target="#myModal8">
+                            Step 6</button>
+                    </i>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal10">Open Full View</button>
+                    <i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true">
+                            <button type="button" class="btn btn-warning run-btn" data-toggle="modal" data-target="#myModal9">
+                                Step 7</button>
+                        </i>
+                    <button type="button" class="btn btn-info" data-toggle="modal" [disabled]="!patternsEnable" data-target="#myModal7">Open Patterns Chart</button>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="patterns-body">
+            <tr>
+                <td class="input-body">                                                                                                                                          
+                    <textarea rows="33" cols="65" id="id1" [(ngModel)]="textAreaValue1" (ngModelChange)="updateResults()"></textarea>
+                </td>
+                <td class="output-body">
+                    <!-- <span class = "testText" [(ngModel)]="textSample"></span> -->
+                    <textarea id="id1" class="output-area" [(ngModel)]="textAreaValue2" rows="33" cols="80" readonly="true"></textarea>
+                </td>
+                <td class="results-body">
+                    
+                    <textarea id="id2" class="results-area" [(ngModel)]="outputValue" rows="33" cols="80" readonly="true"></textarea>
+                </td>
+                </tr>
+        </tbody>
+    </table>
+    <!-- Trigger the modal with a button -->
+    <div class="modalBtn-patterns">
+
+        <!-- Modal -->
+        <div id="myModal10" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <td class="results-body">
+                        <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                        <textarea id="id2" class="results-area" [(ngModel)]="outputValue" rows="35" cols="180" readonly="true"></textarea>
+                        <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                    </td>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- Modal7 -->
+
+    <div id="myModal7" class="modal fade" role="dialog" *ngIf="patternsEnable">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Patterns Chart</h4>
+                </div>
+                <td class="results-body">
+                    <div class="">
+                        <chart [options]="options"></chart>
+                    </div>
+                </td>
+            </div>
+        </div>
+    </div>
+    <!-- Modal4 -->
+    <div id="myModal4" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Step 2</h2>
+                </div>
+                <div class="modal-body">
+                        <i class="fa fa-info-circle fa-2x" aria-hidden="true"> </i>  
+                        <h3>Once the input file is selected, You can view the contents of it loaded here</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Modal 5 -->
+    <div id="myModal5" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Step 4</h2>
+                </div>
+                <div class="modal-body">
+                        <i class="fa fa-info-circle fa-2x" aria-hidden="true"> </i>  
+                <h3>The reduced instructions are displayed here in the Output instruction area</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Modal 6-->
+    <div id="myModal6" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Step 5</h2>
+                </div>
+                <div class="modal-body">
+                        <i class="fa fa-info-circle fa-2x" aria-hidden="true"> </i>  
+                <h3>In this results area, the summary of instructions and sequences, the sequences list are shown</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Modal 8-->
+    <div id="myModal8" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Step 6</h2>
+                </div>
+                <div class="modal-body">
+                        <i class="fa fa-info-circle fa-2x" aria-hidden="true"> </i>  
+                        <h3>Click on the 'Open Full view' button in oder to see the results in larger screen;
+                            Results are viewed only after the file is run
+                        </h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+     <!-- Modal 9-->
+     <div id="myModal9" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+    
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h2 class="modal-title">Step 7</h2>
+                    </div>
+                    <div class="modal-body">
+                            <i class="fa fa-bar-chart fa-2x" aria-hidden="true"> </i>  
+                            <h3>click on the 'Open sequences chart to view the bar chart of the sequences identified;
+                                This is enabled only after a file is run.
+                            </h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+</div>
+

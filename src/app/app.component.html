@@ -1,0 +1,79 @@
+<div class="assembly-wrapper">
+  <header class="bs-docs-nav navbar navbar-static-top">
+    <div class="navbar-header">
+      <div class="navbar-header">
+        <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#bs-navbar" data-toggle="collapse"
+          type="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="../" class="navbar-brand">WATSRE-Assembly Training for Software Reverse Engineering</a>
+      </div>
+      <!-- <a>Assembly Language interaction</a> -->
+    </div>
+    <!-- <h1>Assembly Language interaction</h1> -->
+    <div class="nav navbar-nav">
+      <ul class="nav navbar-nav assembly-navbar">
+        <li>
+          <a routerLink="/home">Home</a>
+        </li>
+        <li>
+          <a routerLink="/instruction">Instructions-64</a>
+        </li>
+        <li>
+            <a routerLink="/instruction2">Instructions-32</a>
+          </li>
+        <li>
+          <a routerLink="/patterns">Finding Patterns</a>
+        </li>
+        <!-- <li>
+          <a routerLink="/debuggerMode">Mini Debugger Mode</a>
+        </li> -->
+        <li>
+          <a routerLink="/help">Help</a>
+        </li>
+      </ul>
+
+    </div>
+  </header>
+  <!--<my-instruction> </my-instruction>-->
+  <router-outlet></router-outlet>
+</div>
+
+
+<!--
+<h1>Hello -{{selectedRegister2}}-{{selectedRegister3}}</h1>
+ 
+
+   <div *ngFor ="let r of register">
+ {{r.name}}-{{r.value}}
+</div>
+ <br/>
+ <br/>
+ <br/>
+ <div>
+  <select [(ngModel)]="selectedRegister1">
+    <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option>
+    
+  </select>
+  <input type="number" required
+               [(ngModel)]="valueToAdd">
+  <button type="button" (click)="addNumber()">Start</button>
+</div>
+<div>
+<select [(ngModel)]="selectedRegister2">
+    <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option> 
+  </select>
+  <select [(ngModel)]="selectedRegister3">
+    <option *ngFor="let r of register" [value]="r.name">{{r.name}}</option> 
+  </select>
+  <button type="button" (click)="addRegister()">Start</button>
+</div>
+<br>
+<br>
+-->
+<!--<div>
+  <textarea type="text" style="height: 400px" row="20" cols="40" name="comment" placeholder="Please copy your code here"></textarea>
+  </div>-->
