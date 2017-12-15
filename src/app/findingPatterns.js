@@ -166,25 +166,20 @@ var FindingPatterns = (function () {
         var outputLength = this.outputLines.length;
         var outputString = '';
         if (outputLength === 1) {
-            this.outputValue = '------------Results Summary----------' +
-                +'Original Count: ' + this.getFirstLineCounts() +
+            this.outputValue = "\n" + "---------Summary----------" + "\n" +
+                'Original Count: ' + this.getFirstLineCounts() +
                 '\n' + 'Reduced instruction Count:' + this.finalLines.length + '\n' +
-                'Number of sequences identified: ' + this.countSequences + '\n' +
-                '\n' +
-                '**********************************Table format****************************' + "\n" + '\n' +
-                'Count' + '\t' + 'Seq_ID' + '\t' + 'line numbers' + '\t' + 'instruction' + '\t' + '\t' + '\t' + 'Meaning' + '\n' +
-                '___________________________________________________________________________' + '\n' +
-                this.print4 + "\n" +
-                +'\n' + '\n' +
-                'Seq_ID_1 count -  ' + this.seqID_1 + '\n' +
-                'Seq_ID_2 count -  ' + this.seqID_2 + '\n' +
-                'Seq_ID_3 count -  ' + this.seqID_3 + '\n' +
-                'Seq_ID_4 count -  ' + this.seqID_4 + '\n' +
-                'Seq_ID_5 count -  ' + this.seqID_5 + '\n' +
-                'Seq_ID_6 count -  ' + this.seqID_6 + '\n' +
-                'Seq_ID_7 count -  ' + this.seqID_7 + '\n' +
-                'Seq_ID_8 count -  ' + this.seqID_8 + '\n' +
-                'Seq_ID_9 count -  ' + this.seqID_9 + '\n' +
+                'Number of sequences identified: ' + this.countSequences + '\n' + '\n' +
+                +'\n' + "----------Sequence ID count-----------" + "\n" +
+                'Seq_ID_1  count -  ' + this.seqID_1 + '\n' +
+                'Seq_ID_2  count -  ' + this.seqID_2 + '\n' +
+                'Seq_ID_3  count -  ' + this.seqID_3 + '\n' +
+                'Seq_ID_4  count -  ' + this.seqID_4 + '\n' +
+                'Seq_ID_5  count -  ' + this.seqID_5 + '\n' +
+                'Seq_ID_6  count -  ' + this.seqID_6 + '\n' +
+                'Seq_ID_7  count -  ' + this.seqID_7 + '\n' +
+                'Seq_ID_8  count -  ' + this.seqID_8 + '\n' +
+                'Seq_ID_9  count -  ' + this.seqID_9 + '\n' +
                 'Seq_ID_10 count -  ' + this.seqID_10 + '\n' +
                 'Seq_ID_11 count -  ' + this.seqID_11 + '\n' +
                 'Seq_ID_12 count -  ' + this.seqID_12 + '\n' +
@@ -221,8 +216,12 @@ var FindingPatterns = (function () {
                 'Seq_ID_43 count -  ' + this.seqID_43 + '\n' +
                 'Seq_ID_44 count -  ' + this.seqID_44 + '\n' +
                 'Seq_ID_45 count -  ' + this.seqID_45 + '\n' +
-                '**************************' + '\n' +
-                'Sequences List:' + '\n' + this.print2 + '\n';
+                '**********************************Table format****************************' + "\n" + '\n' +
+                'Count' + '\t' + 'Seq_ID' + '\t' + 'line numbers' + '\t' + 'instruction' + '\t' + '\t' + '\t' + 'Meaning' + '\n' +
+                '___________________________________________________________________________' + '\n' +
+                this.print4 + "\n" +
+                '********************************Sequences List in Detail*******************' + '\n' +
+                this.print2 + '\n' + "\n" + '___________________________________________________________________________' + "\n";
             this.seqCount = [this.seqID_1, this.seqID_2,
                 this.seqID_3, this.seqID_4,
                 this.seqID_5, this.seqID_6,
@@ -325,106 +324,139 @@ var FindingPatterns = (function () {
         for (var i = 0; i < (this.finalLines.length - 1); i++) {
             console.log('Final Lines' + this.finalLines.length);
             // Push Logic Starts here*******************************************************
-            if (this.finalLines[i].instructions.trim().startsWith("push")) {
+            if (this.finalLines[i].instructions.trim().startsWith("push ebp")) {
                 // console.log(this.finalLines[i].instructions);
-                if (this.finalLines[i + 1].instructions.trim().startsWith("mov")) {
+                if (this.finalLines[i + 1].instructions.trim().startsWith("mov ebp,esp")) {
                     if (this.finalLines[i + 2].instructions.trim().startsWith("sub esp")) {
                         console.log("Variables are declared");
                         this.countSequences++;
                         this.seqID_5++;
-                        var printSeq = "Start of the function with variables declared - {";
-                        this.print2 += "___________________________________" + "\n" +
-                            'Sequence ID: 5' + "\n" + "Count: " + this.countSequences + '\n' + printSeq + "\n" +
-                            "In the lines: " + (i + 1) + ", " + (i + 2) + ", " + (i + 3) + "\n" +
+                        var printSeq = "Open brace { - Function Start variables declared";
+                        var printSeq2 = "push ebp' saves the value of ebp in the stack;" + "\n" +
+                            "'mov ebp,esp' points to the top of the stack" + "\n";
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
+                            'Sequence ID: 5' + "\n" + "Count: " + this.countSequences + '\n' +
+                            "In the lines: " + (i + 1) + ", " + (i + 2) + ", " + (i + 3) + "\n" + printSeq + "\n" + printSeq2 + "\n" +
                             this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n';
-                        this.print4 += this.countSequences + '\t' + "5" + '\t' + (i + 1) + "," + (i + 2) + ',' + (i + 3) + "\t" + this.finalLines[i].instructions + '\n' + '\t' + '\t' + '\t' + this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq + '\n' +
-                            '___________________________________________________________________________' + '\n';
+                        this.print4 += this.countSequences + '\t' + "5" + '\t' + (i + 1) + "," + (i + 2) + ',' + (i + 3) + "\t" +
+                            this.finalLines[i].instructions + '\n' + '\t' + '\t' + '\t' +
+                            this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' +
+                            this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
+                            printSeq + '\n' +
+                            '______________________________________________________________________________________________________________________' + '\n';
                     }
                     else {
                         console.log("{");
                         this.countSequences++;
                         this.seqID_1++;
                         //let printSeq = "{"
-                        var printSeq = "Open brace { - Start of the function";
+                        var printSeq = "Open brace { - Function Start ";
+                        var printSeq2 = "The value of ebp is saved (push ebp) and is pointed to the top of the stack (mov ebp, esp)";
                         this.seqID = this.countSequences;
-                        this.print2 += "___________________________________" + "\n" +
-                            'Sequence ID: 1' + "\n" + "Count: " + this.countSequences + '\n' + printSeq + "\n" +
-                            "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" + this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n';
-                        this.print4 += this.countSequences + '\t' + "1" + '\t' + (i + 1) + "," + (i + 2) + "\t" + this.finalLines[i].instructions + '\t' + '\t' + '\t' + this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq + '\n' +
-                            '___________________________________________________________________________' + '\n';
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
+                            'Sequence ID: 1' + "\n" + "Count: " + this.countSequences + '\n' +
+                            "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" + this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' +
+                            printSeq + "\n" + printSeq2 + "\n";
+                        this.print4 += this.countSequences + '\t' + "1" + '\t' + (i + 1) + "," + (i + 2) + "\t" +
+                            this.finalLines[i].instructions + '\t' + '\t' + '\t' +
+                            this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq + '\n' +
+                            '______________________________________________________________________________________________________________________' + '\n';
                     }
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("call")) {
                     console.log("Prints to output");
                     this.countSequences++;
                     this.seqID_3++;
-                    var printSeq = "Prints to output";
-                    this.print2 += "___________________________________" + "\n" +
+                    var printSeq = "Print to the output";
+                    var printSeq2 = "When push instruction with file name.address1 followed by call with filename.address2, some text or numeric is printed to the output; " + '\n' +
+                        "This text can be seen in the 4th coloumn of the x32debugger ; ";
+                    this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                         'Sequence ID: 3' + "\n" + "Count: " + this.countSequences + '\n' +
-                        printSeq + '\n' + "In the lines: " + (i + 1) + ", " + (i + 2) + ", " + "\n" +
-                        this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n';
+                        '\n' + "In the lines: " + (i + 1) + ", " + (i + 2) + ", " + "\n" +
+                        this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + printSeq + "\n" + printSeq2 + '\n';
                     this.print4 += this.countSequences + '\t' + "3" + '\t' + (i + 1) + "," + (i + 2) + "\t" + this.finalLines[i].instructions + '\t' + '\t' + '\t' + this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq + '\n' +
-                        '___________________________________________________________________________' + '\n';
+                        '______________________________________________________________________________________________________________________' + '\n';
                 }
             }
             else if (this.finalLines[i].instructions.trim().startsWith("pop")) {
                 if (this.finalLines[i + 1].instructions.trim().startsWith("ret")) {
-                    console.log("return of the function");
-                    this.countSequences++;
-                    this.seqID_2++;
-                    var printSeq3 = "} - End of the function";
-                    this.print2 += "___________________________________" + "\n" +
-                        'Sequence ID: 2' + "\n" + "Count: " + this.countSequences + '\n' +
-                        printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" +
-                        this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n';
-                    this.print4 += this.countSequences + '\t' + "2" + '\t' + (i + 1) + "," + (i + 2) + "\t" + this.finalLines[i].instructions + '\t' + '\t' + '\t' + this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                        '___________________________________________________________________________' + '\n';
+                    if (this.finalLines[i - 1].instructions.trim().startsWith("mov esp,ebp")) {
+                        this.countSequences++;
+                        this.seqID_4++;
+                        var printSeq3 = "Close brace } - Variables cleared";
+                        var printSeq2 = "mov ebp,exp removes the space of local variables, by reverting esp to its old value." + "\n" +
+                            "pop ebp restores ebp to its previous value which is on top of the stack and 'ret' returns the to the calling function; Usually in C," + "\n"
+                            + " it means the close of the function (main function or normal function)";
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
+                            'Sequence ID: 4' + "\n" + "Count: " + this.countSequences + '\n' +
+                            "\n" + "In the lines: " + (i - 1) + ", " + (i + 1) + "\n" + (i + 2) + "\n" +
+                            this.finalLines[i - 1].instructions + '\n' + this.finalLines[i].instructions + "\n" + this.finalLines[i + 1].instructions + '\n' + printSeq3 + '\n' + printSeq2 + '\n';
+                        this.print4 += this.countSequences + '\t' + "4" + '\t' + (i - 1) + "," + (i) + ',' + (i + 1) + "\t" +
+                            this.finalLines[i - 1].instructions + '\n' + '\t' + '\t' + '\t' +
+                            this.finalLines[i].instructions + '\t' + '\t' + '\t' +
+                            this.finalLines[i].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
+                            printSeq3 + '\n' +
+                            '______________________________________________________________________________________________________________________' + '\n';
+                    }
+                    else {
+                        this.countSequences++;
+                        this.seqID_2++;
+                        var printSeq3 = "Close brace } - Function end";
+                        var printSeq2 = "pop ebp' restores ebp to its previous value which is on top of the stack and 'ret' returns the to the calling function; " + '\n' +
+                            "Usually in C, it means the close of the function (main function or normal function)";
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
+                            'Sequence ID: 2' + "\n" + "Count: " + this.countSequences + '\n' +
+                            "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" +
+                            this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + printSeq3 + '\n' + printSeq2 + '\n';
+                        this.print4 += this.countSequences + '\t' + "2" + '\t' + (i + 1) + "," + (i + 2) + "\t" + this.finalLines[i].instructions + '\t' + '\t' + '\t' + this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
+                            '______________________________________________________________________________________________________________________' + '\n';
+                    }
                 }
             }
             else if (this.finalLines[i].instructions.trim().startsWith("cmp")) {
                 if (this.finalLines[i + 1].instructions.trim().startsWith("je")) {
                     this.countSequences++;
                     this.seqID_34++;
-                    var printSeq3 = "Compare the contents and jump if not equal to zero";
-                    this.print2 += "___________________________________" + "\n" +
+                    var printSeq3 = "Compare and jump if equal";
+                    this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                         'Sequence ID: 34' + "\n" + "Count: " + this.countSequences + '\n' +
                         printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" +
                         this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n';
                     this.print4 += this.countSequences + '\t' + "34" + '\t' + (i + 1) + "," + (i + 2) + "\t" +
                         this.finalLines[i].instructions + '\t' + '\t' + '\t' +
                         this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                        '___________________________________________________________________________' + '\n';
+                        '______________________________________________________________________________________________________________________' + '\n';
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("jne")) {
                     this.countSequences++;
                     this.seqID_35++;
-                    var printSeq3 = "Compare the contents and jump if not equal to zero";
-                    this.print2 += "___________________________________" + "\n" +
+                    var printSeq3 = "compare and jump if not equal";
+                    this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                         'Sequence ID: 35' + "\n" + "Count: " + this.countSequences + '\n' +
                         printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" +
                         this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n';
                     this.print4 += this.countSequences + '\t' + "35" + '\t' + (i + 1) + "," + (i + 2) + "\t" +
                         this.finalLines[i].instructions + '\t' + '\t' + '\t' +
                         this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                        '___________________________________________________________________________' + '\n';
+                        '______________________________________________________________________________________________________________________' + '\n';
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("jz")) {
                     this.countSequences++;
                     this.seqID_36++;
-                    var printSeq3 = "Compare the contents and jump if not equal to zero";
-                    this.print2 += "___________________________________" + "\n" +
+                    var printSeq3 = "Compare and jump if equal to zero";
+                    this.print2 += '___________________________________________________________________________' + "\n" +
                         'Sequence ID: 36' + "\n" + "Count: " + this.countSequences + '\n' +
                         printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" +
                         this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n';
                     this.print4 += this.countSequences + '\t' + "36" + '\t' + (i + 1) + "," + (i + 2) + "\t" +
                         this.finalLines[i].instructions + '\t' + '\t' + '\t' +
                         this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                        '___________________________________________________________________________' + '\n';
+                        '______________________________________________________________________________________________________________________' + '\n';
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("jnz")) {
                     this.countSequences++;
                     this.seqID_37++;
-                    var printSeq3 = "Compare the contents and jump if not equal to zero";
+                    var printSeq3 = "Compare and jump if not zero";
                     this.print2 += "___________________________________" + "\n" +
                         'Sequence ID: 37' + "\n" + "Count: " + this.countSequences + '\n' +
                         printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" +
@@ -432,72 +464,72 @@ var FindingPatterns = (function () {
                     this.print4 += this.countSequences + '\t' + "37" + '\t' + (i + 1) + "," + (i + 2) + "\t" +
                         this.finalLines[i].instructions + '\t' + '\t' + '\t' +
                         this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                        '___________________________________________________________________________' + '\n';
+                        '______________________________________________________________________________________________________________________' + '\n';
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("jl ")) {
                     this.countSequences++;
                     this.seqID_38++;
-                    var printSeq3 = "Compare the contents and jump if not equal to zero";
-                    this.print2 += "___________________________________" + "\n" +
+                    var printSeq3 = "Compare and jump if less than ";
+                    this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                         'Sequence ID: 38' + "\n" + "Count: " + this.countSequences + '\n' +
                         printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" +
                         this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n';
                     this.print4 += this.countSequences + '\t' + "38" + '\t' + (i + 1) + "," + (i + 2) + "\t" +
                         this.finalLines[i].instructions + '\t' + '\t' + '\t' +
                         this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                        '___________________________________________________________________________' + '\n';
+                        '______________________________________________________________________________________________________________________' + '\n';
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("jle")) {
                     this.countSequences++;
                     this.seqID_39++;
-                    var printSeq3 = "Compare the contents and jump if not equal to zero";
-                    this.print2 += "___________________________________" + "\n" +
+                    var printSeq3 = "Compare and jump if less than or equal";
+                    this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                         'Sequence ID: 39' + "\n" + "Count: " + this.countSequences + '\n' +
                         printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" +
                         this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n';
                     this.print4 += this.countSequences + '\t' + "39" + '\t' + (i + 1) + "," + (i + 2) + "\t" +
                         this.finalLines[i].instructions + '\t' + '\t' + '\t' +
                         this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                        '___________________________________________________________________________' + '\n';
+                        '______________________________________________________________________________________________________________________' + '\n';
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("jg ")) {
                     this.countSequences++;
                     this.seqID_40++;
-                    var printSeq3 = "Compare the contents and jump if not equal to zero";
-                    this.print2 += "___________________________________" + "\n" +
+                    var printSeq3 = "Compare and jump if greater than";
+                    this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                         'Sequence ID: 40' + "\n" + "Count: " + this.countSequences + '\n' +
                         printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" +
                         this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n';
                     this.print4 += this.countSequences + '\t' + "40" + '\t' + (i + 1) + "," + (i + 2) + "\t" +
                         this.finalLines[i].instructions + '\t' + '\t' + '\t' +
                         this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                        '___________________________________________________________________________' + '\n';
+                        '______________________________________________________________________________________________________________________' + '\n';
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("jge")) {
                     this.countSequences++;
                     this.seqID_41++;
-                    var printSeq3 = "Compare the contents and jump if not equal to zero";
-                    this.print2 += "___________________________________" + "\n" +
+                    var printSeq3 = "Compare and jump if greater than equal";
+                    this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                         'Sequence ID: 41' + "\n" + "Count: " + this.countSequences + '\n' +
                         printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" +
                         this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n';
                     this.print4 += this.countSequences + '\t' + "41" + '\t' + (i + 1) + "," + (i + 2) + "\t" +
                         this.finalLines[i].instructions + '\t' + '\t' + '\t' +
                         this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                        '___________________________________________________________________________' + '\n';
+                        '______________________________________________________________________________________________________________________' + '\n';
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("jb ")) {
                     this.countSequences++;
                     this.seqID_42++;
-                    var printSeq3 = "Compare the contents and jump if not equal to zero";
-                    this.print2 += "___________________________________" + "\n" +
+                    var printSeq3 = "Compare and jump if below ";
+                    this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                         'Sequence ID: 42' + "\n" + "Count: " + this.countSequences + '\n' +
                         printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" +
                         this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n';
                     this.print4 += this.countSequences + '\t' + "42" + '\t' + (i + 1) + "," + (i + 2) + "\t" +
                         this.finalLines[i].instructions + '\t' + '\t' + '\t' +
                         this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                        '___________________________________________________________________________' + '\n';
+                        '______________________________________________________________________________________________________________________' + '\n';
                 }
             }
             else if (this.finalLines[i].instructions.trim().startsWith("cdq")) {
@@ -505,17 +537,19 @@ var FindingPatterns = (function () {
                     if (this.finalLines[i + 2].instructions.trim().startsWith("sar")) {
                         this.countSequences++;
                         this.seqID_43++;
-                        var printSeq3 = "Numeric divison";
-                        this.print2 += "___________________________________" + "\n" +
+                        var printSeq3 = "Division with an immediate numeric value";
+                        var printSeq2 = "cdq' converts double to quad word and extend the sign bit of 'eax' into 'edx'." + "\n" +
+                            " sar instruction is used to shift the bits of the operand destination to the right, by the number of bits specified in the count operand.";
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                             'Sequence ID: 43' + "\n" + "Count: " + this.countSequences + '\n' +
-                            printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + '\t' +
+                            "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + '\t' + printSeq3 + "\n" + printSeq2 + "n" +
                             this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n' + this.finalLines[i + 3].instructions + '\n';
                         this.print4 += this.countSequences + '\t' + "43" + '\t' + (i + 1) + "," + (i + 2) + ',' + (i + 3) + "," +
                             this.finalLines[i].instructions + '\n' + '\t' + '\t' + '\t' +
                             this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' +
                             this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' +
                             printSeq3 + '\n' +
-                            '___________________________________________________________________________' + '\n';
+                            '______________________________________________________________________________________________________________________' + '\n';
                     }
                 }
             }
@@ -525,7 +559,9 @@ var FindingPatterns = (function () {
                         this.countSequences++;
                         this.seqID_44++;
                         var printSeq3 = "float multiplication with integer type variable";
-                        this.print2 += "___________________________________" + "\n" +
+                        var printSeq2 = "Fild instruction converts the integer operand (signed) into extended-real and" + "\n" +
+                            "load it onto the floating-point stack.";
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                             'Sequence ID: 44' + "\n" + "Count: " + this.countSequences + '\n' +
                             printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + '\t' +
                             this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n' + this.finalLines[i + 3].instructions + '\n';
@@ -534,50 +570,70 @@ var FindingPatterns = (function () {
                             this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' +
                             this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' +
                             printSeq3 + '\n' +
-                            '___________________________________________________________________________' + '\n';
+                            '______________________________________________________________________________________________________________________' + '\n';
                     }
                 }
             }
             else if (this.finalLines[i].instructions.trim().startsWith("mov dword")) {
                 this.countSequences++;
                 this.seqID_6++;
-                var printSeq3 = "Integer is moved into the register";
-                this.print2 += "___________________________________" + "\n" +
+                var printSeq3 = "Declare and assign value to integer variable";
+                var printSeq2 = "The integer value assigned is saved into the stack";
+                this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                     'Sequence ID: 6' + "\n" + "Count: " + this.countSequences + '\n' +
-                    printSeq3 + "\n" + "In the lines: " + (i + 1) + "\n" + this.finalLines[i].instructions + '\n';
+                    "\n" + "In the lines: " + (i + 1) + "\n" + this.finalLines[i].instructions + '\n' + printSeq3 + '\n' + printSeq2;
                 this.print4 += this.countSequences + '\t' + "6" + '\t' + (i + 1) + "\t" + this.finalLines[i].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                    '___________________________________________________________________________' + '\n';
-            }
-            else if (this.finalLines[i].instructions.trim().startsWith("fstp dword")) {
-                this.countSequences++;
-                this.seqID_7++;
-                var printSeq3 = "Float variable is moved into the register";
-                this.print2 += "___________________________________" + "\n" +
-                    'Sequence ID: 7' + "\n" + "Count: " + this.countSequences + '\n' +
-                    printSeq3 + "\n" + "In the lines: " + (i + 1) + "\n" + this.finalLines[i].instructions + '\n';
-                this.print4 += this.countSequences + '\t' + "7" + '\t' + (i + 1) + "\t" + this.finalLines[i].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
                     '______________________________________________________________________________________________________________________' + '\n';
             }
-            else if (this.finalLines[i].instructions.trim().startsWith("fstp qword")) {
-                this.countSequences++;
-                this.seqID_8++;
-                var printSeq3 = "Double variable is moved into the register";
-                this.print2 += "___________________________________" + "\n" +
-                    'Sequence ID: 8' + "\n" + "Count: " + this.countSequences + '\n' +
-                    printSeq3 + "\n" + "In the lines: " + (i + 1) + "\n" + this.finalLines[i].instructions + '\n';
-                this.print4 += this.countSequences + '\t' + "8" + '\t' + (i + 1) + "\t" + this.finalLines[i].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
-                    printSeq3 + '\n' +
-                    '______________________________________________________________________________________________________________________' + '\n';
+            else if (this.finalLines[i].instructions.trim().startsWith("fld dword")) {
+                if (this.finalLines[i + 1].instructions.trim().startsWith("fstp dword")) {
+                    this.countSequences++;
+                    this.seqID_7++;
+                    var printSeq3 = "Declare and assign a float variable";
+                    var printSeq2 = "fld instruction loads the floating point value onto the stack (floating point stack);" + "\n" +
+                        "FSTP stores a floating point number from the top of the floating-point register stack to the designated memory region." + "\n" +
+                        "Here dword means 32-bit and is usually floating point type in C; SS - Stack segment" +
+                        "\n" + "fld - floating point load one; fstp - Store floating point value";
+                    this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
+                        'Sequence ID: 7' + "\n" + "Count: " + this.countSequences + '\n' +
+                        "\n" + "In the lines: " + (i + 1) + "," + (i + 2) + "\n" + this.finalLines[i].instructions + '\n' +
+                        this.finalLines[i + 1].instructions + "\n" + printSeq3 + "\n" + printSeq2;
+                    this.print4 += this.countSequences + '\t' + "7" + '\t' + (i + 1) + "\t" +
+                        this.finalLines[i].instructions + '\n' + '\t' + '\t' + '\t' +
+                        this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
+                        printSeq3 + '\n' +
+                        '______________________________________________________________________________________________________________________' + '\n';
+                }
+            }
+            else if (this.finalLines[i].instructions.trim().startsWith("fld qword")) {
+                if (this.finalLines[i + 1].instructions.trim().startsWith("fstp dword")) {
+                    this.countSequences++;
+                    this.seqID_8++;
+                    var printSeq3 = "Double variable is moved into the register";
+                    var printSeq2 = "fld instruction loads the floating point value onto the stack (floating point stack);" + "\n" +
+                        "FSTP stores a floating point number from the top of the floating-point register stack to the designated memory region." + "\n" +
+                        "Here qword means 64-bit and is usually double in C" + "\n" +
+                        "fld - floating point load one; fstp - Store floating point value";
+                    this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
+                        'Sequence ID: 8' + "\n" + "Count: " + this.countSequences + '\n' +
+                        "\n" + "In the lines: " + (i + 1) + "," + (i + 2) + "\n" + this.finalLines[i].instructions +
+                        this.finalLines[i + 1].instructions + '\n' + printSeq3 + "\n" + printSeq2;
+                    this.print4 += this.countSequences + '\t' + "8" + '\t' + (i + 1) + "\t" +
+                        this.finalLines[i].instructions + '\n' + '\t' + '\t' + '\t' +
+                        this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
+                        '______________________________________________________________________________________________________________________' + '\n';
+                }
             }
             else if (this.finalLines[i].instructions.trim().startsWith("mov byte")) {
                 this.countSequences++;
                 this.seqID_9++;
                 var printSeq3 = "Character type variable is moved into the register";
-                this.print2 += "___________________________________" + "\n" +
+                this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                     'Sequence ID: 9' + "\n" + "Count: " + this.countSequences + '\n' +
                     printSeq3 + "\n" + "In the lines: " + (i + 1) + "\n" + this.finalLines[i].instructions + '\n';
-                this.print4 += this.countSequences + '\t' + "9" + '\t' + (i + 1) + "," + "\t" + this.finalLines[i].instructions + '\n' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                    '___________________________________________________________________________' + '\n';
+                this.print4 += this.countSequences + '\t' + "9" + '\t' + (i + 1) + "," + "\t" + this.finalLines[i].instructions + '\n' + '\t' + '\t'
+                    + printSeq3 + '\n' +
+                    '______________________________________________________________________________________________________________________' + '\n';
             }
             else if (this.finalLines[i].instructions.trim().startsWith("lea")) {
                 if (this.finalLines[i + 1].instructions.trim().startsWith("push")) {
@@ -587,12 +643,12 @@ var FindingPatterns = (function () {
                             this.countSequences++;
                             this.seqID_10++;
                             var printSeq3 = "Reading a single variable - any data type";
-                            this.print2 += "___________________________________" + "\n" +
+                            this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                                 'Sequence ID: 10' + "\n" + "Count: " + this.countSequences + '\n' +
                                 printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" + (i + 3) + "," + (i + 4) + "," + "\n" +
                                 this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n' + this.finalLines[i + 3].instructions + '\n';
                             this.print4 += this.countSequences + '\t' + "10" + '\t' + (i + 1) + "," + (i + 2) + ',' + (i + 3) + ',' + (i + 4) + "\t" + this.finalLines[i].instructions + '\n' + '\t' + '\t' + '\t' + this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + this.finalLines[i + 3].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                                '___________________________________________________________________________' + '\n';
+                                '______________________________________________________________________________________________________________________' + '\n';
                         }
                     }
                 }
@@ -603,8 +659,8 @@ var FindingPatterns = (function () {
                         if (this.finalLines[i + 3].instructions.trim().startsWith("mov")) {
                             this.countSequences++;
                             this.seqID_22++;
-                            var printSeq3 = "Addition of three integers";
-                            this.print2 += "___________________________________" + "\n" +
+                            var printSeq3 = "Addition of three integer variables";
+                            this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                                 'Sequence ID: 22' + "\n" + "Count: " + this.countSequences + '\n' +
                                 printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + (i + 4) + "\n" +
                                 this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n' + this.finalLines[i + 3].instructions + '\n';
@@ -614,14 +670,14 @@ var FindingPatterns = (function () {
                                 this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' +
                                 this.finalLines[i + 3].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
                                 printSeq3 + '\n' +
-                                '___________________________________________________________________________' + '\n';
+                                '______________________________________________________________________________________________________________________' + '\n';
                         }
                     }
                     else if (this.finalLines[i + 2].instructions.trim().startsWith("mov")) {
                         this.countSequences++;
                         this.seqID_11++;
                         var printSeq3 = "Addition of two integers";
-                        this.print2 += "___________________________________" + "\n" +
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                             'Sequence ID: 11' + "\n" + "Count: " + this.countSequences + '\n' +
                             printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" + (i + 3) + "," + "\n" +
                             this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n';
@@ -630,7 +686,7 @@ var FindingPatterns = (function () {
                             this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' +
                             this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
                             printSeq3 + '\n' +
-                            '___________________________________________________________________________' + '\n';
+                            '______________________________________________________________________________________________________________________' + '\n';
                     }
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("sub")) {
@@ -638,8 +694,8 @@ var FindingPatterns = (function () {
                         if (this.finalLines[i + 3].instructions.trim().startsWith("mov")) {
                             this.countSequences++;
                             this.seqID_23++;
-                            var printSeq3 = "substraction of two integers";
-                            this.print2 += "___________________________________" + "\n" +
+                            var printSeq3 = "Substraction of three integer variables";
+                            this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                                 'Sequence ID: 23' + "\n" + "Count: " + this.countSequences + '\n' +
                                 printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + (i + 4) + '\t' +
                                 this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n' + this.finalLines[i + 3].instructions + '\n';
@@ -649,7 +705,7 @@ var FindingPatterns = (function () {
                                 this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' +
                                 this.finalLines[i + 3].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
                                 printSeq3 + '\n' +
-                                '___________________________________________________________________________' + '\n';
+                                '______________________________________________________________________________________________________________________' + '\n';
                         }
                     }
                 }
@@ -658,8 +714,8 @@ var FindingPatterns = (function () {
                         if (this.finalLines[i + 3].instructions.trim().startsWith("mov")) {
                             this.countSequences++;
                             this.seqID_24++;
-                            var printSeq3 = "integer multiplication";
-                            this.print2 += "___________________________________" + "\n" +
+                            var printSeq3 = "Multiplication of three integer variables";
+                            this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                                 'Sequence ID: 24' + "\n" + "Count: " + this.countSequences + '\n' +
                                 printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + "\n" +
                                 this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n' + this.finalLines[i + 3].instructions + '\n';
@@ -669,14 +725,14 @@ var FindingPatterns = (function () {
                                 this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' +
                                 this.finalLines[i + 3].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
                                 printSeq3 + '\n' +
-                                '___________________________________________________________________________' + '\n';
+                                '______________________________________________________________________________________________________________________' + '\n';
                         }
                     }
                     else if (this.finalLines[i + 2].instructions.trim().startsWith("mov")) {
                         this.countSequences++;
                         this.seqID_12++;
                         var printSeq3 = "integer multiplication";
-                        this.print2 += "___________________________________" + "\n" +
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                             'Sequence ID: 12' + "\n" + "Count: " + this.countSequences + '\n' +
                             printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + "\n" +
                             this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n';
@@ -685,7 +741,7 @@ var FindingPatterns = (function () {
                             this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' +
                             this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
                             printSeq3 + '\n' +
-                            '___________________________________________________________________________' + '\n';
+                            '______________________________________________________________________________________________________________________' + '\n';
                     }
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("cdq")) {
@@ -695,8 +751,8 @@ var FindingPatterns = (function () {
                                 if (this.finalLines[i + 5].instructions.trim().startsWith("mov")) {
                                     this.countSequences++;
                                     this.seqID_25++;
-                                    var printSeq3 = "integer divison or modulus";
-                                    this.print2 += "___________________________________" + "\n" +
+                                    var printSeq3 = "Division of three integer variables";
+                                    this.print2 += '___________________________________________________________________________' + "\n" +
                                         'Sequence ID: 25' + "\n" + "Count: " + this.countSequences + '\n' +
                                         printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + (i + 4) + ',' + (i + 5) + ',' + (i + 6) + "\n" +
                                         this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n' + this.finalLines[i + 3].instructions + '\n' + this.finalLines[i + 4].instructions + '\n' + this.finalLines[i + 5].instructions + '\n';
@@ -708,7 +764,7 @@ var FindingPatterns = (function () {
                                         this.finalLines[i + 4].instructions + '\t' + '\t' + '\t' +
                                         this.finalLines[i + 5].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
                                         printSeq3 + '\n' +
-                                        '___________________________________________________________________________' + '\n';
+                                        '______________________________________________________________________________________________________________________' + '\n';
                                 }
                             }
                         }
@@ -717,7 +773,7 @@ var FindingPatterns = (function () {
                         this.countSequences++;
                         this.seqID_13++;
                         var printSeq3 = "integer divison or modulus";
-                        this.print2 += "___________________________________" + "\n" +
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                             'Sequence ID: 13' + "\n" + "Count: " + this.countSequences + '\n' +
                             printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + (i + 4) + "\n" +
                             this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n' + this.finalLines[i + 2].instructions + '\n';
@@ -726,7 +782,7 @@ var FindingPatterns = (function () {
                             this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' +
                             this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
                             printSeq3 + '\n' +
-                            '___________________________________________________________________________' + '\n';
+                            '______________________________________________________________________________________________________________________' + '\n';
                     }
                 }
             }
@@ -736,8 +792,8 @@ var FindingPatterns = (function () {
                         if (this.finalLines[i + 3].instructions.trim().startsWith("fstp")) {
                             this.countSequences++;
                             this.seqID_26++;
-                            var printSeq3 = "Three float variable Addition";
-                            this.print2 += "___________________________________" + "\n" +
+                            var printSeq3 = "Addtion of three float variables";
+                            this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                                 'Sequence ID: 26' + "\n" + "Count: " + this.countSequences + '\n' +
                                 printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + "\n" +
                                 this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n' + this.finalLines[i + 3].instructions + '\n';
@@ -747,19 +803,19 @@ var FindingPatterns = (function () {
                                 this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' +
                                 this.finalLines[i + 3].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
                                 printSeq3 + '\n' +
-                                '___________________________________________________________________________' + '\n';
+                                '______________________________________________________________________________________________________________________' + '\n';
                         }
                     }
                     else if (this.finalLines[i + 2].instructions.trim().startsWith("fstp")) {
                         this.countSequences++;
                         this.seqID_14++;
                         var printSeq3 = "float addition";
-                        this.print2 += "___________________________________" + "\n" +
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                             'Sequence ID: 14' + "\n" + "Count: " + this.countSequences + '\n' +
                             printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" + (i + 3) + "," + "\n" +
                             this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n';
                         this.print4 += this.countSequences + '\t' + "14" + '\t' + (i + 1) + "," + (i + 2) + ',' + (i + 3) + "\t" + this.finalLines[i].instructions + '\n' + '\t' + '\t' + '\t' + this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                            '___________________________________________________________________________' + '\n';
+                            '______________________________________________________________________________________________________________________' + '\n';
                     }
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("fsub")) {
@@ -767,8 +823,8 @@ var FindingPatterns = (function () {
                         if (this.finalLines[i + 3].instructions.trim().startsWith("fstp")) {
                             this.countSequences++;
                             this.seqID_27++;
-                            var printSeq3 = "Three float variable substaction";
-                            this.print2 += "___________________________________" + "\n" +
+                            var printSeq3 = "Substraction of three float variables";
+                            this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                                 'Sequence ID: 27' + "\n" + "Count: " + this.countSequences + '\n' +
                                 printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + "\n" +
                                 this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n' + this.finalLines[i + 3].instructions + '\n';
@@ -778,19 +834,19 @@ var FindingPatterns = (function () {
                                 this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' +
                                 this.finalLines[i + 3].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
                                 printSeq3 + '\n' +
-                                '___________________________________________________________________________' + '\n';
+                                '______________________________________________________________________________________________________________________' + '\n';
                         }
                     }
                     else if (this.finalLines[i + 2].instructions.trim().startsWith("fstp")) {
                         this.countSequences++;
                         this.seqID_15++;
                         var printSeq3 = "float variable substraction";
-                        this.print2 += "___________________________________" + "\n" +
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                             'Sequence ID: 15' + "\n" + "Count: " + this.countSequences + '\n' +
                             printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + "\n" +
                             this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n';
                         this.print4 += this.countSequences + '\t' + "15" + '\t' + (i + 1) + "," + (i + 2) + ',' + (i + 3) + "\t" + this.finalLines[i].instructions + '\n' + '\t' + '\t' + '\t' + this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                            '___________________________________________________________________________' + '\n';
+                            '______________________________________________________________________________________________________________________' + '\n';
                     }
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("fmul")) {
@@ -798,8 +854,8 @@ var FindingPatterns = (function () {
                         if (this.finalLines[i + 3].instructions.trim().startsWith("fstp")) {
                             this.countSequences++;
                             this.seqID_28++;
-                            var printSeq3 = "Three float variable multiplication";
-                            this.print2 += "___________________________________" + "\n" +
+                            var printSeq3 = "Multiplication of three float variables";
+                            this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                                 'Sequence ID: 28' + "\n" + "Count: " + this.countSequences + '\n' +
                                 printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + "\n" +
                                 this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n' + this.finalLines[i + 3].instructions + '\n';
@@ -809,19 +865,19 @@ var FindingPatterns = (function () {
                                 this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' +
                                 this.finalLines[i + 3].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
                                 printSeq3 + '\n' +
-                                '___________________________________________________________________________' + '\n';
+                                '______________________________________________________________________________________________________________________' + '\n';
                         }
                     }
                     else if (this.finalLines[i + 2].instructions.trim().startsWith("fstp")) {
                         this.countSequences++;
                         this.seqID_16++;
                         var printSeq3 = "float multiplication";
-                        this.print2 += "___________________________________" + "\n" +
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                             'Sequence ID: 16' + "\n" + "Count: " + this.countSequences + '\n' +
                             printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + "\n" +
                             this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n';
                         this.print4 += this.countSequences + '\t' + "16" + '\t' + (i + 1) + "," + (i + 2) + ',' + (i + 3) + "\t" + this.finalLines[i].instructions + '\n' + '\t' + '\t' + '\t' + this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                            '___________________________________________________________________________' + '\n';
+                            '______________________________________________________________________________________________________________________' + '\n';
                     }
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("fdiv")) {
@@ -829,8 +885,8 @@ var FindingPatterns = (function () {
                         if (this.finalLines[i + 3].instructions.trim().startsWith("fstp")) {
                             this.countSequences++;
                             this.seqID_29++;
-                            var printSeq3 = "Three float variable division";
-                            this.print2 += "___________________________________" + "\n" +
+                            var printSeq3 = "Divison of three float variables";
+                            this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                                 'Sequence ID: 29' + "\n" + "Count: " + this.countSequences + '\n' +
                                 printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + "\n" +
                                 this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n' + this.finalLines[i + 3].instructions + '\n';
@@ -840,32 +896,32 @@ var FindingPatterns = (function () {
                                 this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' +
                                 this.finalLines[i + 3].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
                                 printSeq3 + '\n' +
-                                '___________________________________________________________________________' + '\n';
+                                '______________________________________________________________________________________________________________________' + '\n';
                         }
                     }
                     else if (this.finalLines[i + 2].instructions.trim().startsWith("fstp")) {
                         this.countSequences++;
                         this.seqID_17++;
                         var printSeq3 = "integer divison or modulus";
-                        this.print2 += "___________________________________" + "\n" +
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                             'Sequence ID: 17' + "\n" + "Count: " + this.countSequences + '\n' +
                             printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + (i + 4) + "\n" +
                             this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n';
                         this.print4 += this.countSequences + '\t' + "17" + '\t' + (i + 1) + "," + (i + 2) + ',' + (i + 3) + "\t" + this.finalLines[i].instructions + '\n' + '\t' + '\t' + '\t' + this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                            '___________________________________________________________________________' + '\n';
+                            '______________________________________________________________________________________________________________________' + '\n';
                     }
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("sub")) {
                     if (this.finalLines[i + 2].instructions.trim().startsWith("fstp")) {
                         this.countSequences++;
                         this.seqID_45++;
-                        var printSeq3 = "printing float to output";
-                        this.print2 += "___________________________________" + "\n" +
+                        var printSeq3 = "Printing the float value to the output";
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                             'Sequence ID: 45' + "\n" + "Count: " + this.countSequences + '\n' +
                             printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + (i + 4) + "\n" +
                             this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n';
                         this.print4 += this.countSequences + '\t' + "45" + '\t' + (i + 1) + "," + (i + 2) + ',' + (i + 3) + "\t" + this.finalLines[i].instructions + '\n' + '\t' + '\t' + '\t' + this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                            '___________________________________________________________________________' + '\n';
+                            '______________________________________________________________________________________________________________________' + '\n';
                     }
                 }
             }
@@ -875,8 +931,8 @@ var FindingPatterns = (function () {
                         if (this.finalLines[i + 3].instructions.trim().startsWith("fstp")) {
                             this.countSequences++;
                             this.seqID_30++;
-                            var printSeq3 = "Three double variable Addition";
-                            this.print2 += "___________________________________" + "\n" +
+                            var printSeq3 = "Addition of three double type variables";
+                            this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                                 'Sequence ID: 30' + "\n" + "Count: " + this.countSequences + '\n' +
                                 printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + "\n" +
                                 this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n' + this.finalLines[i + 3].instructions + '\n';
@@ -886,19 +942,19 @@ var FindingPatterns = (function () {
                                 this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' +
                                 this.finalLines[i + 3].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
                                 printSeq3 + '\n' +
-                                '___________________________________________________________________________' + '\n';
+                                '______________________________________________________________________________________________________________________' + '\n';
                         }
                     }
                     else if (this.finalLines[i + 2].instructions.trim().startsWith("fstp")) {
                         this.countSequences++;
                         this.seqID_18++;
                         var printSeq3 = "float addition of two variables";
-                        this.print2 += "___________________________________" + "\n" +
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                             'Sequence ID: 18' + "\n" + "Count: " + this.countSequences + '\n' +
                             printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "\n" + (i + 3) + "," + "\n" +
                             this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n';
                         this.print4 += this.countSequences + '\t' + "18" + '\t' + (i + 1) + "," + (i + 2) + ',' + (i + 3) + "\t" + this.finalLines[i].instructions + '\n' + '\t' + '\t' + '\t' + this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                            '___________________________________________________________________________' + '\n';
+                            '______________________________________________________________________________________________________________________' + '\n';
                     }
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("fsub")) {
@@ -906,8 +962,8 @@ var FindingPatterns = (function () {
                         if (this.finalLines[i + 3].instructions.trim().startsWith("fstp")) {
                             this.countSequences++;
                             this.seqID_31++;
-                            var printSeq3 = "Three float variable substaction";
-                            this.print2 += "___________________________________" + "\n" +
+                            var printSeq3 = "Substraction of three double type variables";
+                            this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                                 'Sequence ID: 31' + "\n" + "Count: " + this.countSequences + '\n' +
                                 printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + "\n" +
                                 this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n' + this.finalLines[i + 3].instructions + '\n';
@@ -917,19 +973,19 @@ var FindingPatterns = (function () {
                                 this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' +
                                 this.finalLines[i + 3].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
                                 printSeq3 + '\n' +
-                                '___________________________________________________________________________' + '\n';
+                                '______________________________________________________________________________________________________________________' + '\n';
                         }
                     }
                     else if (this.finalLines[i + 2].instructions.trim().startsWith("fstp")) {
                         this.countSequences++;
                         this.seqID_19++;
                         var printSeq3 = "float substaction";
-                        this.print2 += "___________________________________" + "\n" +
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                             'Sequence ID: 19' + "\n" + "Count: " + this.countSequences + '\n' +
                             printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + "\n" +
                             this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n';
                         this.print4 += this.countSequences + '\t' + "19" + '\t' + (i + 1) + "," + (i + 2) + ',' + (i + 3) + "\t" + this.finalLines[i].instructions + '\n' + '\t' + '\t' + '\t' + this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                            '___________________________________________________________________________' + '\n';
+                            '______________________________________________________________________________________________________________________' + '\n';
                     }
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("fmul")) {
@@ -937,8 +993,8 @@ var FindingPatterns = (function () {
                         if (this.finalLines[i + 3].instructions.trim().startsWith("fstp")) {
                             this.countSequences++;
                             this.seqID_32++;
-                            var printSeq3 = "Three float variable multiplication";
-                            this.print2 += "___________________________________" + "\n" +
+                            var printSeq3 = "Multiplication of three double type variables";
+                            this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                                 'Sequence ID: 32' + "\n" + "Count: " + this.countSequences + '\n' +
                                 printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + "\n" +
                                 this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n' + this.finalLines[i + 3].instructions + '\n';
@@ -948,19 +1004,19 @@ var FindingPatterns = (function () {
                                 this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' +
                                 this.finalLines[i + 3].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
                                 printSeq3 + '\n' +
-                                '___________________________________________________________________________' + '\n';
+                                '______________________________________________________________________________________________________________________' + '\n';
                         }
                     }
                     else if (this.finalLines[i + 2].instructions.trim().startsWith("fstp")) {
                         this.countSequences++;
                         this.seqID_20++;
                         var printSeq3 = "float multiplication";
-                        this.print2 += "___________________________________" + "\n" +
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                             'Sequence ID: 20' + "\n" + "Count: " + this.countSequences + '\n' +
                             printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + "\n" +
                             this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n';
                         this.print4 += this.countSequences + '\t' + "20" + '\t' + (i + 1) + "," + (i + 2) + ',' + (i + 3) + "\t" + this.finalLines[i].instructions + '\n' + '\t' + '\t' + '\t' + this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                            '___________________________________________________________________________' + '\n';
+                            '______________________________________________________________________________________________________________________' + '\n';
                     }
                 }
                 else if (this.finalLines[i + 1].instructions.trim().startsWith("fdiv")) {
@@ -968,8 +1024,8 @@ var FindingPatterns = (function () {
                         if (this.finalLines[i + 3].instructions.trim().startsWith("fstp")) {
                             this.countSequences++;
                             this.seqID_33++;
-                            var printSeq3 = "Three float variable division";
-                            this.print2 += "___________________________________" + "\n" +
+                            var printSeq3 = "Division of three double type variables";
+                            this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                                 'Sequence ID: 33' + "\n" + "Count: " + this.countSequences + '\n' +
                                 printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + "\n" +
                                 this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n' + this.finalLines[i + 3].instructions + '\n';
@@ -979,19 +1035,19 @@ var FindingPatterns = (function () {
                                 this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' +
                                 this.finalLines[i + 3].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' +
                                 printSeq3 + '\n' +
-                                '___________________________________________________________________________' + '\n';
+                                '______________________________________________________________________________________________________________________' + '\n';
                         }
                     }
                     else if (this.finalLines[i + 2].instructions.trim().startsWith("fstp")) {
                         this.countSequences++;
                         this.seqID_21++;
                         var printSeq3 = "integer divison or modulus";
-                        this.print2 += "___________________________________" + "\n" +
+                        this.print2 += "\n" + '___________________________________________________________________________' + "\n" +
                             'Sequence ID: 21' + "\n" + "Count: " + this.countSequences + '\n' +
                             printSeq3 + "\n" + "In the lines: " + (i + 1) + ", " + (i + 2) + "," + (i + 3) + "," + (i + 4) + "\n" +
                             this.finalLines[i].instructions + '\n' + this.finalLines[i + 1].instructions + '\n' + this.finalLines[i + 2].instructions + '\n';
                         this.print4 += this.countSequences + '\t' + "21" + '\t' + (i + 1) + "," + (i + 2) + ',' + (i + 3) + "\t" + this.finalLines[i].instructions + '\n' + '\t' + '\t' + '\t' + this.finalLines[i + 1].instructions + '\t' + '\t' + '\t' + this.finalLines[i + 2].instructions + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + '\t' + printSeq3 + '\n' +
-                            '___________________________________________________________________________' + '\n';
+                            '______________________________________________________________________________________________________________________' + '\n';
                     }
                 }
             }
